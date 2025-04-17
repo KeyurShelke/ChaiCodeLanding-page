@@ -50,12 +50,14 @@ export default function Navbar() {
             >
               Udemy
             </Link>
+
             <Link
-              href="#"
+              href="https://docs.chaicode.com/"
               className="text-white hover:text-primary transition-colors"
             >
               Docs
             </Link>
+
             <Link
               href="#cohorts"
               className="relative text-white hover:text-primary transition-colors group"
@@ -63,6 +65,7 @@ export default function Navbar() {
               Cohorts
               <span className="absolute -right-3 top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
             </Link>
+
             <Link
               href="#testimonials"
               className="text-white hover:text-primary transition-colors"
