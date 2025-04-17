@@ -1,0 +1,367 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 30 100% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 30 30% 20%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 30 80% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 30 100% 50%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 25s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.hover-card {
+  transition: all 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px -5px rgba(255, 153, 0, 0.1), 0 10px 10px -5px rgba(255, 153, 0, 0.04);
+}
+
+.logo-card {
+  transition: all 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.logo-card:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Glowing effect */
+.glow {
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.5);
+}
+
+.glow:hover {
+  box-shadow: 0 0 30px rgba(249, 115, 22, 0.7);
+}
+
+/* Add this CSS for the blue glowing line in the hero section */
+.glow.bg-cyan-500 {
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.7);
+}
+
+.glow.bg-cyan-500:hover {
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.9);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(to right, #f97316, #fb923c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Footer gradient text */
+.footer-gradient-text {
+  background: linear-gradient(to bottom, #333333, #111111);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+/* Animated background */
+.animated-bg {
+  background: linear-gradient(-45deg, #000000, #1a1a1a, #0c0c0c, #1f1f1f);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Pulse animation for live indicator */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+}
+
+.pulse-ring {
+  animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+/* Add these styles for the new heading style */
+.heading-large {
+  font-size: 5rem;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #c0c0c0;
+  letter-spacing: -0.02em;
+}
+
+.heading-subtitle {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #888;
+  max-width: 900px;
+  margin: 1.5rem auto;
+}
+
+/* Add these styles for the new button style */
+.button-glow {
+  background-color: transparent;
+  color: white;
+  border: 2px solid #f97316;
+  border-radius: 9999px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.5);
+}
+
+.button-glow:hover {
+  box-shadow: 0 0 25px rgba(249, 115, 22, 0.8);
+  transform: translateY(-2px);
+}
+
+.button-glow::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.3), transparent);
+  z-index: -1;
+}
+
+/* Add orange divider style */
+.orange-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(249, 115, 22, 0.7), transparent);
+  margin: 0 auto;
+  width: 80%;
+}
+
+/* Company logos */
+.company-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.company-logo img {
+  height: 2.5rem;
+  filter: grayscale(100%) brightness(1.5);
+  transition: all 0.3s ease;
+}
+
+.company-logo:hover img {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.05);
+}
+
+/* Bubble avatars */
+.bubble-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.bubble-avatar {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  border: 3px solid #000;
+  overflow: hidden;
+  margin-left: -1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.bubble-avatar:first-child {
+  margin-left: 0;
+}
+
+.bubble-avatar:hover {
+  transform: translateY(-5px) scale(1.1);
+  z-index: 10;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 4rem 0;
+  position: relative;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.footer-column h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-column ul li a {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #f97316;
+}
+
+.footer-bottom {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-copyright {
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-social a {
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #f97316;
+}
+
+.footer-brand {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 10rem;
+  font-weight: 900;
+  color: #111;
+  text-align: center;
+  letter-spacing: -0.05em;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Lamp effect styles */
+.bg-gradient-conic {
+  background-image: conic-gradient(var(--conic-position), var(--tw-gradient-stops));
+}
