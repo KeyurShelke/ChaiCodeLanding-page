@@ -83,7 +83,8 @@
 
 .hover-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 25px -5px rgba(255, 153, 0, 0.1), 0 10px 10px -5px rgba(255, 153, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(255, 153, 0, 0.1),
+    0 10px 10px -5px rgba(255, 153, 0, 0.04);
 }
 
 .logo-card {
@@ -212,14 +213,24 @@
   right: -2px;
   bottom: -2px;
   border-radius: 9999px;
-  background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(249, 115, 22, 0.3),
+    transparent
+  );
   z-index: -1;
 }
 
 /* Add orange divider style */
 .orange-divider {
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(249, 115, 22, 0.7), transparent);
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(249, 115, 22, 0.7),
+    transparent
+  );
   margin: 0 auto;
   width: 80%;
 }
@@ -363,5 +374,8 @@
 
 /* Lamp effect styles */
 .bg-gradient-conic {
-  background-image: conic-gradient(var(--conic-position), var(--tw-gradient-stops));
+  background-image: conic-gradient(
+    var(--conic-position),
+    var(--tw-gradient-stops)
+  );
 }

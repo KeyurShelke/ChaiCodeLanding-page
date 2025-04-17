@@ -72,6 +72,14 @@ export default function Navbar() {
           </nav>
 
           {/* Login Button - Right */}
+          <div className="absolute right-4">
+            <a
+              href="https://courses.chaicode.com/learn/account/signin"
+              className="button-glow"
+            >
+              Login
+            </a>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
