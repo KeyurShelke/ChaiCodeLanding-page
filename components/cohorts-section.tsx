@@ -1,7 +1,8 @@
-"use client"
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import { Play } from "lucide-react"
+"use client";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Play } from "lucide-react";
+import Link from "next/link";
 
 const cohorts = [
   {
@@ -36,16 +37,20 @@ const cohorts = [
     originalPrice: "₹12999",
     tag: "Advanced",
   },
-]
+];
 
 export default function CohortsSection() {
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
-  })
+  });
 
   return (
-    <section className="py-20 bg-black relative overflow-hidden" id="cohorts" ref={ref}>
+    <section
+      className="py-20 bg-black relative overflow-hidden"
+      id="cohorts"
+      ref={ref}
+    >
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
       <div className="absolute -top-40 right-20 w-80 h-80 rounded-full bg-primary/5 blur-3xl"></div>
@@ -58,9 +63,19 @@ export default function CohortsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="button-glow inline-block px-4 py-1 mb-4">Live training classes</span>
-          <h2 className="heading-large mb-4">Cohorts</h2>
-          <p className="heading-subtitle">Join our intensive, mentor-led cohorts and accelerate your career</p>
+          <Link
+            href="https://courses.chaicode.com/learn/view-all?show=batch&type=17"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="button-glow inline-block px-4 py-1 mb-4">
+              Live training classes
+            </button>
+            <h2 className="heading-large mb-4">Cohorts</h2>
+            <p className="heading-subtitle">
+              Join our intensive, mentor-led cohorts and accelerate your career
+            </p>
+          </Link>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -73,7 +88,8 @@ export default function CohortsSection() {
               className="bg-gradient-to-b from-gray-900 to-black rounded-xl overflow-hidden border border-gray-800 group"
               whileHover={{
                 y: -10,
-                boxShadow: "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
+                boxShadow:
+                  "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
                 borderColor: "rgba(249, 115, 22, 0.3)",
               }}
             >
@@ -103,9 +119,15 @@ export default function CohortsSection() {
                 <p className="text-gray-400 mb-4">{cohort.description}</p>
                 <div className="flex items-center mb-4">
                   <span className="text-2xl font-bold">{cohort.price}</span>
-                  <span className="text-gray-400 line-through ml-2">{cohort.originalPrice}</span>
+                  <span className="text-gray-400 line-through ml-2">
+                    {cohort.originalPrice}
+                  </span>
                 </div>
-                <motion.button className="w-full button-glow" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+                <motion.button
+                  className="w-full button-glow"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                >
                   Buy Now
                 </motion.button>
               </div>
@@ -117,5 +139,5 @@ export default function CohortsSection() {
       {/* Orange divider */}
       <div className="orange-divider mt-20"></div>
     </section>
-  )
+  );
 }
