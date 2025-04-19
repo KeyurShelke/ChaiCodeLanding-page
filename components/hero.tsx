@@ -1,19 +1,20 @@
-"use client"
+"use client";
 
-import { useEffect, useRef } from "react"
-import { motion, useAnimation } from "framer-motion"
+import { useEffect, useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
-  const controls = useAnimation()
-  const ref = useRef<HTMLDivElement>(null)
+  const controls = useAnimation();
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     controls.start({
       opacity: 1,
       y: 0,
       transition: { duration: 0.8, ease: "easeOut" },
-    })
-  }, [controls])
+    });
+  }, [controls]);
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center pt-16 overflow-hidden">
@@ -40,27 +41,49 @@ export default function Hero() {
 
       {/* Trusted by badge */}
       <div className="button-glow inline-block px-6 py-3 mb-16 z-10">
-        <span className="text-white text-sm font-medium">Trusted by 1.5M Code Learners</span>
+        <span className="text-white text-sm font-medium">
+          Trusted by 1.5M Code Learners
+        </span>
       </div>
 
       {/* Main heading */}
-      <motion.div className="text-center max-w-4xl mx-auto z-10" initial={{ opacity: 0, y: 20 }} animate={controls}>
+      <motion.div
+        className="text-center max-w-4xl mx-auto z-10"
+        initial={{ opacity: 0, y: 20 }}
+        animate={controls}
+      >
         <h1 className="text-[5rem] font-bold leading-tight mb-6">
           <span className="text-gray-200">Consistency and</span>
           <br />
           <span className="text-primary">Community</span>
         </h1>
 
-        <p className="text-xl text-gray-300 mb-8">An unmatched Learning Experience for coding courses.</p>
-
-        <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
-          Content is every where, we provide a learning experience that is unmatched. Bounties, peer learning, peer code
-          reviews, Virtual hostel, Alumni Network, Doubt sessions, Group projects and so many other activities to keep
-          you on track.
+        <p className="text-xl text-gray-300 mb-8">
+          An unmatched Learning Experience for coding courses.
         </p>
 
-        <motion.div className="relative inline-block mt-4" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <button className="button-glow relative">Check all Live Cohorts</button>
+        <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
+          Content is every where, we provide a learning experience that is
+          unmatched. Bounties, peer learning, peer code reviews, Virtual hostel,
+          Alumni Network, Doubt sessions, Group projects and so many other
+          activities to keep you on track.
+        </p>
+
+        <motion.div
+          className="relative inline-block mt-4"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <Link
+            href="https://courses.chaicode.com/learn/view-all?show=batch&type=17"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="button-glow relative flex items-center">
+              Check all Live Cohorts
+              <span className="ml-2 h-3 w-3 rounded-full bg-red-500 pulse-ring"></span>
+            </button>
+          </Link>
         </motion.div>
       </motion.div>
 
@@ -84,5 +107,5 @@ export default function Hero() {
         </svg>
       </div>
     </section>
-  )
+  );
 }
