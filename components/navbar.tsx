@@ -45,7 +45,7 @@ export default function Navbar() {
           {/* Desktop Navigation - Center */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link
-              href="#"
+              href="#udemy"
               className="text-white hover:text-primary transition-colors"
             >
               Udemy

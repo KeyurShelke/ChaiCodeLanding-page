@@ -1,8 +1,8 @@
-"use client"
-import { useRef } from "react"
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import { Play } from "lucide-react"
+"use client";
+import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Play } from "lucide-react";
 
 const courses = [
   {
@@ -32,17 +32,21 @@ const courses = [
     image: "/placeholder.svg?height=400&width=600",
     badge: "Top Rated",
   },
-]
+];
 
 export default function UdemySection() {
-  const containerRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null);
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
-  })
+  });
 
   return (
-    <section className="py-20 bg-black relative overflow-hidden" ref={ref}>
+    <section
+      id="udemy"
+      className="py-20 bg-black relative overflow-hidden"
+      ref={ref}
+    >
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
       <div className="absolute -top-40 -left-40 w-80 h-80 rounded-full bg-primary/5 blur-3xl"></div>
@@ -56,7 +60,9 @@ export default function UdemySection() {
           className="text-center mb-12"
         >
           <h2 className="heading-large mb-4">Udemy</h2>
-          <p className="heading-subtitle">Not only in India, we are global leaders in tech education</p>
+          <p className="heading-subtitle">
+            Not only in India, we are global leaders in tech education
+          </p>
         </motion.div>
 
         <div className="relative overflow-hidden" ref={containerRef}>
@@ -67,14 +73,17 @@ export default function UdemySection() {
                 className="flex-shrink-0 w-[500px] bg-gradient-to-b from-gray-900 to-black rounded-xl overflow-hidden border border-gray-800 group"
                 whileHover={{
                   scale: 1.03,
-                  boxShadow: "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
+                  boxShadow:
+                    "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
                 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <div className="grid grid-cols-[1fr_180px] h-full">
                   <div className="p-6">
                     <h3 className="font-bold text-xl mb-4">{course.title}</h3>
-                    <p className="text-gray-400 text-sm mb-6">{course.description}</p>
+                    <p className="text-gray-400 text-sm mb-6">
+                      {course.description}
+                    </p>
                     <div className="mt-auto">
                       <div className="text-4xl font-bold mb-2">4.7 Stars</div>
                       <div className="text-gray-400">{course.badge}</div>
@@ -99,14 +108,17 @@ export default function UdemySection() {
                 className="flex-shrink-0 w-[500px] bg-gradient-to-b from-gray-900 to-black rounded-xl overflow-hidden border border-gray-800 group"
                 whileHover={{
                   scale: 1.03,
-                  boxShadow: "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
+                  boxShadow:
+                    "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
                 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <div className="grid grid-cols-[1fr_180px] h-full">
                   <div className="p-6">
                     <h3 className="font-bold text-xl mb-4">{course.title}</h3>
-                    <p className="text-gray-400 text-sm mb-6">{course.description}</p>
+                    <p className="text-gray-400 text-sm mb-6">
+                      {course.description}
+                    </p>
                     <div className="mt-auto">
                       <div className="text-4xl font-bold mb-2">4.7 Stars</div>
                       <div className="text-gray-400">{course.badge}</div>
@@ -128,5 +140,5 @@ export default function UdemySection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
