@@ -1,9 +1,11 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Play } from "lucide-react";
+import { Play, X } from "lucide-react";
 import Link from "next/link";
 
+// Updated cohorts array with videoId field
 const cohorts = [
   {
     id: 1,
@@ -12,30 +14,34 @@ const cohorts = [
     price: "₹6999",
     originalPrice: "₹8999",
     tag: "Most Popular",
+    videoId: "8yyrAfsjPTw", // Add YouTube video ID for each cohort
   },
   {
     id: 2,
-    title: "Mobile Dev Cohort - Live 2.0",
+    title: "Coding Heros",
     description: "Master mobile app development with React Native",
-    price: "₹7999",
-    originalPrice: "₹9999",
+    price: "₹299",
+    originalPrice: "₹499",
     tag: "New Batch",
+    videoId: "Fw3FezexzV0", // Replace with actual video IDs
   },
   {
     id: 3,
     title: "Data Science Cohort - Live 1.0",
     description: "Become a data scientist in 12 weeks",
-    price: "₹8999",
-    originalPrice: "₹10999",
+    price: "₹6999",
+    originalPrice: "₹8999",
     tag: "Limited Seats",
+    videoId: "Kjd-SWpe1do", // Replace with actual video IDs
   },
   {
     id: 4,
-    title: "AI & ML Cohort - Live 1.0",
+    title: "Gen AI Cohort - Live 1.0",
     description: "Master artificial intelligence and machine learning",
-    price: "₹9999",
-    originalPrice: "₹12999",
+    price: "₹4999",
+    originalPrice: "₹7999",
     tag: "Advanced",
+    videoId: "VNb_LawBBWU", // Replace with actual video IDs
   },
 ];
 
@@ -44,6 +50,10 @@ export default function CohortsSection() {
     triggerOnce: false,
     threshold: 0.1,
   });
+
+  // Track which video is currently playing
+  const [playingVideo, setPlayingVideo] = useState<number | null>(null);
+  const [isMuted, setIsMuted] = useState(true); // Start muted to allow autoplay
 
   return (
     <section
@@ -63,19 +73,13 @@ export default function CohortsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <Link
-            href="https://courses.chaicode.com/learn/view-all?show=batch&type=17"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="button-glow inline-block px-4 py-1 mb-4">
-              Live training classes
-            </button>
-            <h2 className="heading-large mb-4">Cohorts</h2>
-            <p className="heading-subtitle">
-              Join our intensive, mentor-led cohorts and accelerate your career
-            </p>
-          </Link>
+          <span className="button-glow inline-block px-4 py-1 mb-4">
+            Live training classes
+          </span>
+          <h2 className="heading-large mb-4">Cohorts</h2>
+          <p className="heading-subtitle">
+            Join our intensive, mentor-led cohorts and accelerate your career
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -98,22 +102,116 @@ export default function CohortsSection() {
                   {cohort.tag}
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="h-48 bg-gray-800 flex items-center justify-center relative">
-                  <motion.div
-                    className="bg-primary rounded-full p-3 relative z-10"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <Play className="h-8 w-8 text-black" />
-                  </motion.div>
 
-                  {/* Live indicator */}
-                  <div className="absolute top-4 right-4 flex items-center space-x-2 bg-black/50 px-3 py-1 rounded-full">
-                    <span className="text-white text-sm font-medium">LIVE</span>
-                    <span className="h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
-                  </div>
+                <div className="h-48 bg-gray-800 relative">
+                  {playingVideo === cohort.id ? (
+                    // YouTube iframe when playing
+                    <div className="absolute inset-0 w-full h-full">
+                      <iframe
+                        className="absolute inset-0 w-full h-full"
+                        src={`https://www.youtube.com/embed/${
+                          cohort.videoId
+                        }?autoplay=1&mute=${
+                          isMuted ? 1 : 0
+                        }&rel=0&modestbranding=1`}
+                        title={`${cohort.title} video`}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+
+                      {/* Video controls */}
+                      <div className="absolute bottom-2 right-2 flex space-x-2 z-20">
+                        <motion.button
+                          className="bg-black/70 text-white p-1.5 rounded-full"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setIsMuted(!isMuted);
+                          }}
+                        >
+                          {isMuted ? (
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                              <line x1="23" y1="9" x2="17" y2="15"></line>
+                              <line x1="17" y1="9" x2="23" y2="15"></line>
+                            </svg>
+                          ) : (
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                            </svg>
+                          )}
+                        </motion.button>
+
+                        <motion.button
+                          className="bg-black/70 text-white p-1.5 rounded-full"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setPlayingVideo(null);
+                          }}
+                        >
+                          <X size={16} />
+                        </motion.button>
+                      </div>
+                    </div>
+                  ) : (
+                    // Thumbnail and play button
+                    <>
+                      {/* YouTube thumbnail */}
+                      <img
+                        src={`https://img.youtube.com/vi/${cohort.videoId}/mqdefault.jpg`}
+                        alt={`${cohort.title} thumbnail`}
+                        className="w-full h-full object-cover"
+                      />
+
+                      <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                        <motion.div
+                          className="bg-primary rounded-full p-3 relative z-10"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          onClick={() => setPlayingVideo(cohort.id)}
+                        >
+                          <Play className="h-8 w-8 text-black" />
+                        </motion.div>
+                      </div>
+
+                      {/* Live indicator */}
+                      <div className="absolute top-4 right-4 flex items-center space-x-2 bg-black/50 px-3 py-1 rounded-full">
+                        <span className="text-white text-sm font-medium">
+                          LIVE
+                        </span>
+                        <span className="h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
+
               <div className="p-6 relative z-10">
                 <h3 className="font-bold text-xl mb-2">{cohort.title}</h3>
                 <p className="text-gray-400 mb-4">{cohort.description}</p>
@@ -123,13 +221,15 @@ export default function CohortsSection() {
                     {cohort.originalPrice}
                   </span>
                 </div>
-                <motion.button
-                  className="w-full button-glow"
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                >
-                  Buy Now
-                </motion.button>
+                <Link href={`/cohorts/${cohort.id}`}>
+                  <motion.button
+                    className="w-full button-glow"
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                  >
+                    Buy Now
+                  </motion.button>
+                </Link>
               </div>
             </motion.div>
           ))}
