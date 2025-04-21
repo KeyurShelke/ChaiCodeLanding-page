@@ -25,8 +25,7 @@ export default function freeapisection() {
         >
           <h2 className="heading-large mb-4">FreeAPI - Open Source</h2>
           <p className="heading-subtitle">
-            Join thousands of students who have transformed their careers with
-            our comprehensive courses
+            Unlock Your Potential with Our API Hub.
           </p>
         </motion.div>
 
@@ -63,8 +62,6 @@ export default function freeapisection() {
             </div>
 
             <div className="flex items-center mb-6">
-              <span className="text-primary text-3xl font-bold">₹499</span>
-              <span className="text-gray-400 line-through ml-3">₹3,099</span>
               <span className="ml-3 bg-primary/20 text-primary px-2 py-1 rounded text-sm">
                 87% off
               </span>
