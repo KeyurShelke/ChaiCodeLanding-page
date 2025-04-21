@@ -46,19 +46,19 @@ const topics: Topic[] = [
   {
     id: 6,
     name: "Django",
-    size: "small",
+    size: "medium",
     url: "https://www.youtube.com/watch?v=j6szNSzw4BU&list=PLu71SKxNbfoDOf-6vAcKmazT92uLnWAgy",
   },
   {
     id: 7,
     name: "NextJS",
-    size: "small",
+    size: "medium",
     url: "https://www.youtube.com/watch?v=OgS1ZWZItno&list=PLu71SKxNbfoBAaWGtn9GA2PTw0HO0tXzq",
   },
   {
     id: 8,
     name: "JavaScript",
-    size: "large",
+    size: "medium",
     url: "https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37",
   },
   {
@@ -76,26 +76,26 @@ const topics: Topic[] = [
   {
     id: 11,
     name: "MongoDB",
-    size: "small",
+    size: "medium",
     url: "https://www.youtube.com/watch?v=fDTf1mk-jQg",
   },
   {
     id: 12,
     name: "Git",
-    size: "small",
+    size: "medium",
     url: "https://www.youtube.com/watch?v=q8EevlEpQ2A",
   },
   { id: 13, name: "AWS", size: "medium", url: "https://example.com/aws" },
   {
     id: 14,
     name: "JWT",
-    size: "small",
+    size: "medium",
     url: "https://www.youtube.com/watch?v=xrj3zzaqODw",
   },
   {
     id: 15,
     name: "React",
-    size: "large",
+    size: "medium",
     url: "https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige",
   },
 ];
