@@ -1,7 +1,14 @@
-"use client"
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import { BookOpen, Code, CheckCircle, MessageSquare, Users, Zap } from "lucide-react"
+"use client";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  BookOpen,
+  Code,
+  CheckCircle,
+  MessageSquare,
+  Users,
+  Zap,
+} from "lucide-react";
 
 const benefits = [
   {
@@ -52,13 +59,13 @@ const benefits = [
     icon: <Zap className="h-6 w-6 text-primary" />,
     position: "bottom-right",
   },
-]
+];
 
 export default function WhyChaiCodeSection() {
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
-  })
+  });
 
   return (
     <section className="py-20 bg-black relative overflow-hidden" ref={ref}>
@@ -75,7 +82,9 @@ export default function WhyChaiCodeSection() {
           className="text-center mb-16"
         >
           <h2 className="heading-large mb-4">But Why ChaiCode?</h2>
-          <p className="heading-subtitle">ChaiCode exists because we love tech and teaching</p>
+          <p className="heading-subtitle">
+            ChaiCode exists because we love tech and teaching
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -88,15 +97,22 @@ export default function WhyChaiCodeSection() {
               className="bg-gradient-to-b from-gray-900 to-black rounded-xl p-6 border border-gray-800 group"
               whileHover={{
                 y: -5,
-                boxShadow: "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
+                boxShadow:
+                  "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
                 borderColor: "rgba(249, 115, 22, 0.3)",
               }}
             >
               <div className="flex items-start gap-4">
-                <div className="bg-gray-800 p-2 rounded-lg">{benefits[0].icon}</div>
+                <div className="bg-gray-800 p-2 rounded-lg">
+                  {benefits[0].icon}
+                </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">{benefits[0].title}</h3>
-                  <p className="text-gray-400 text-sm">{benefits[0].description}</p>
+                  <h3 className="text-xl font-bold mb-2">
+                    {benefits[0].title}
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    {benefits[0].description}
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -108,15 +124,22 @@ export default function WhyChaiCodeSection() {
               className="bg-gradient-to-b from-gray-900 to-black rounded-xl p-6 border border-gray-800 group"
               whileHover={{
                 y: -5,
-                boxShadow: "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
+                boxShadow:
+                  "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
                 borderColor: "rgba(249, 115, 22, 0.3)",
               }}
             >
               <div className="flex items-start gap-4">
-                <div className="bg-gray-800 p-2 rounded-lg">{benefits[2].icon}</div>
+                <div className="bg-gray-800 p-2 rounded-lg">
+                  {benefits[2].icon}
+                </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">{benefits[2].title}</h3>
-                  <p className="text-gray-400 text-sm">{benefits[2].description}</p>
+                  <h3 className="text-xl font-bold mb-2">
+                    {benefits[2].title}
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    {benefits[2].description}
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -128,15 +151,22 @@ export default function WhyChaiCodeSection() {
               className="bg-gradient-to-b from-gray-900 to-black rounded-xl p-6 border border-gray-800 group"
               whileHover={{
                 y: -5,
-                boxShadow: "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
+                boxShadow:
+                  "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
                 borderColor: "rgba(249, 115, 22, 0.3)",
               }}
             >
               <div className="flex items-start gap-4">
-                <div className="bg-gray-800 p-2 rounded-lg">{benefits[4].icon}</div>
+                <div className="bg-gray-800 p-2 rounded-lg">
+                  {benefits[4].icon}
+                </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">{benefits[4].title}</h3>
-                  <p className="text-gray-400 text-sm">{benefits[4].description}</p>
+                  <h3 className="text-xl font-bold mb-2">
+                    {benefits[4].title}
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    {benefits[4].description}
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -151,7 +181,7 @@ export default function WhyChaiCodeSection() {
               className="bg-gray-100 rounded-xl overflow-hidden mb-4 w-48 h-48"
             >
               <img
-                src="/placeholder.svg?height=300&width=300"
+                src="/hitesh.jpeg?height=300&width=300"
                 alt="Hitesh Choudhary"
                 className="w-full h-full object-cover"
               />
@@ -164,13 +194,16 @@ export default function WhyChaiCodeSection() {
             >
               <h3 className="text-2xl font-bold mb-1">Hitesh Choudhary</h3>
               <p className="text-gray-400 text-sm mb-4">
-                YouTuber • Creator of LCO • Instructor at Unacademy • Founder of iNeuron • Taught over 3.2M+ students
-                across 160+ countries
+                YouTuber • Creator of LCO • Instructor at Unacademy • Founder of
+                iNeuron • Taught over 3.2M+ students across 160+ countries
               </p>
               <div className="mt-4">
-                <h4 className="text-xl font-bold mb-2 text-primary">Approach</h4>
+                <h4 className="text-xl font-bold mb-2 text-primary">
+                  Approach
+                </h4>
                 <p className="text-gray-400 text-sm mb-4">
-                  Project based courses with peer reviews and live sessions that make learning fun
+                  Project based courses with peer reviews and live sessions that
+                  make learning fun
                 </p>
                 <div className="flex justify-center space-x-2">
                   <div className="w-8 h-8 rounded bg-gray-800"></div>
@@ -185,7 +218,11 @@ export default function WhyChaiCodeSection() {
               transition={{ duration: 0.6, delay: 0.7 }}
               className="mt-8"
             >
-              <motion.button className="button-glow" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+              <motion.button
+                className="button-glow"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
                 Join Cohorts Live Classes
               </motion.button>
             </motion.div>
@@ -200,15 +237,22 @@ export default function WhyChaiCodeSection() {
               className="bg-gradient-to-b from-gray-900 to-black rounded-xl p-6 border border-gray-800 group"
               whileHover={{
                 y: -5,
-                boxShadow: "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
+                boxShadow:
+                  "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
                 borderColor: "rgba(249, 115, 22, 0.3)",
               }}
             >
               <div className="flex items-start gap-4">
-                <div className="bg-gray-800 p-2 rounded-lg">{benefits[1].icon}</div>
+                <div className="bg-gray-800 p-2 rounded-lg">
+                  {benefits[1].icon}
+                </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">{benefits[1].title}</h3>
-                  <p className="text-gray-400 text-sm">{benefits[1].description}</p>
+                  <h3 className="text-xl font-bold mb-2">
+                    {benefits[1].title}
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    {benefits[1].description}
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -220,15 +264,22 @@ export default function WhyChaiCodeSection() {
               className="bg-gradient-to-b from-gray-900 to-black rounded-xl p-6 border border-gray-800 group"
               whileHover={{
                 y: -5,
-                boxShadow: "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
+                boxShadow:
+                  "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
                 borderColor: "rgba(249, 115, 22, 0.3)",
               }}
             >
               <div className="flex items-start gap-4">
-                <div className="bg-gray-800 p-2 rounded-lg">{benefits[3].icon}</div>
+                <div className="bg-gray-800 p-2 rounded-lg">
+                  {benefits[3].icon}
+                </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">{benefits[3].title}</h3>
-                  <p className="text-gray-400 text-sm">{benefits[3].description}</p>
+                  <h3 className="text-xl font-bold mb-2">
+                    {benefits[3].title}
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    {benefits[3].description}
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -240,15 +291,22 @@ export default function WhyChaiCodeSection() {
               className="bg-gradient-to-b from-gray-900 to-black rounded-xl p-6 border border-gray-800 group"
               whileHover={{
                 y: -5,
-                boxShadow: "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
+                boxShadow:
+                  "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
                 borderColor: "rgba(249, 115, 22, 0.3)",
               }}
             >
               <div className="flex items-start gap-4">
-                <div className="bg-gray-800 p-2 rounded-lg">{benefits[5].icon}</div>
+                <div className="bg-gray-800 p-2 rounded-lg">
+                  {benefits[5].icon}
+                </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">{benefits[5].title}</h3>
-                  <p className="text-gray-400 text-sm">{benefits[5].description}</p>
+                  <h3 className="text-xl font-bold mb-2">
+                    {benefits[5].title}
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    {benefits[5].description}
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -256,5 +314,5 @@ export default function WhyChaiCodeSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
