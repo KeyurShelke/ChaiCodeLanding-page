@@ -81,9 +81,9 @@ const topics: Topic[] = [
   },
   {
     id: 12,
-    name: "GraphQL",
+    name: "Git",
     size: "small",
-    url: "https://example.com/graphql",
+    url: "https://www.youtube.com/watch?v=q8EevlEpQ2A",
   },
   { id: 13, name: "AWS", size: "medium", url: "https://example.com/aws" },
   {
