@@ -1,42 +1,56 @@
-"use client"
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import { ExternalLink } from "lucide-react"
+"use client";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { ExternalLink } from "lucide-react";
+import Link from "next/link";
 
-const topics = [
-  { id: 1, name: "Docker", size: "medium" },
-  { id: 2, name: "MCP Server", size: "medium" },
-  { id: 3, name: "Kubernetes", size: "medium" },
-  { id: 4, name: "Python", size: "medium" },
-  { id: 5, name: "React Native", size: "medium" },
-  { id: 6, name: "Django", size: "small" },
-  { id: 7, name: "NextJS", size: "small" },
-  { id: 8, name: "JavaScript", size: "large" },
-  { id: 9, name: "TypeScript", size: "medium" },
-  { id: 10, name: "Node.js", size: "medium" },
-  { id: 11, name: "MongoDB", size: "small" },
-  { id: 12, name: "GraphQL", size: "small" },
-  { id: 13, name: "AWS", size: "medium" },
-  { id: 14, name: "Firebase", size: "small" },
-  { id: 15, name: "React", size: "large" },
-]
+// Define a type for the topic
+type Topic = {
+  id: number;
+  name: string;
+  size: "small" | "medium" | "large"; // Restrict size to specific string literals
+  link?: string; // Add link property, making it optional
+};
+
+const topics: Topic[] = [
+  {
+    id: 1,
+    name: "Docker",
+    size: "medium",
+    link: "https://www.youtube.com/embed/oBLpqSHc3lA?si=2gMIUJexZofFS_SO",
+  },
+  { id: 2, name: "MCP Server", size: "medium", link: "" },
+  { id: 3, name: "Kubernetes", size: "medium", link: "" },
+  { id: 4, name: "Python", size: "medium", link: "" },
+  { id: 5, name: "React Native", size: "medium", link: "" },
+  { id: 6, name: "Django", size: "medium", link: "" },
+  { id: 7, name: "NextJS", size: "medium", link: "" },
+  { id: 8, name: "JavaScript", size: "medium", link: "" },
+  { id: 9, name: "TypeScript", size: "medium", link: "" },
+  { id: 10, name: "Node.js", size: "medium", link: "" },
+  { id: 11, name: "MongoDB", size: "medium", link: "" },
+  { id: 12, name: "GraphQL", size: "medium", link: "" },
+  { id: 13, name: "AWS", size: "medium", link: "" },
+  { id: 14, name: "Firebase", size: "medium", link: "" },
+  { id: 15, name: "React", size: "medium", link: "" },
+];
 
 export default function TopicsCloudSection() {
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
-  })
+  });
 
-  const getSizeClass = (size) => {
+  const getSizeClass = (size: "small" | "medium" | "large") => {
     switch (size) {
       case "small":
-        return "py-2 px-4 text-sm"
+        return "py-2 px-4 text-sm";
       case "large":
-        return "py-3 px-6 text-lg"
+        return "py-3 px-6 text-lg";
       default:
-        return "py-2 px-5 text-base"
+        return "py-2 px-5 text-base";
     }
-  }
+  };
 
   return (
     <section className="py-20 bg-black relative overflow-hidden" ref={ref}>
@@ -53,7 +67,9 @@ export default function TopicsCloudSection() {
           className="text-center mb-12"
         >
           <h2 className="heading-large mb-4">Topics Cloud</h2>
-          <p className="heading-subtitle">You can find videos and courses on topics and much more</p>
+          <p className="heading-subtitle">
+            You can find videos and courses on topics and much more
+          </p>
         </motion.div>
 
         <div className="flex flex-wrap justify-center gap-4 mb-8">
@@ -69,7 +85,7 @@ export default function TopicsCloudSection() {
                 borderColor: "rgba(249, 115, 22, 0.5)",
               }}
               className={`${getSizeClass(
-                topic.size,
+                topic.size
               )} bg-gradient-to-b from-gray-900 to-black rounded-lg border border-gray-800 font-medium cursor-pointer`}
             >
               {topic.name}
@@ -83,12 +99,18 @@ export default function TopicsCloudSection() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="flex justify-center"
         >
-          <div className="button-glow inline-flex items-center gap-2">
-            <ExternalLink className="h-5 w-5" />
-            <span>Link to youtube videos</span>
-          </div>
+          <Link
+            href="https://www.youtube.com/@chaiaurcode"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="button-glow">
+              Link to youtube videos
+              <span className="ml-2 h-3 w-3 rounded-full bg-red-500 animate-pulse"></span>
+            </button>
+          </Link>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
