@@ -27,9 +27,9 @@ const topics: Topic[] = [
   },
   {
     id: 3,
-    name: "Kubernetes",
+    name: "Fast API",
     size: "medium",
-    url: "https://example.com/kubernetes",
+    url: "https://www.youtube.com/watch?v=foGklduxhM0",
   },
   {
     id: 4,
