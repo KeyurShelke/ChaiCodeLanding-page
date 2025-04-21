@@ -31,7 +31,12 @@ const topics: Topic[] = [
     size: "medium",
     url: "https://example.com/kubernetes",
   },
-  { id: 4, name: "Python", size: "medium", url: "https://example.com/python" },
+  {
+    id: 4,
+    name: "Python",
+    size: "medium",
+    url: "https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+  },
   {
     id: 5,
     name: "React Native",
