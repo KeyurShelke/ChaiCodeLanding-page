@@ -77,7 +77,7 @@ const topics: Topic[] = [
     id: 11,
     name: "MongoDB",
     size: "small",
-    url: "https://example.com/mongodb",
+    url: "https://www.youtube.com/watch?v=fDTf1mk-jQg",
   },
   {
     id: 12,
