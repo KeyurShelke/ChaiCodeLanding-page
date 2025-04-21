@@ -57,7 +57,7 @@ export default function UdemySection() {
             </div>
 
             <div className="flex items-center mb-6">
-              <span className="text-primary text-3xl font-bold">₹399</span>
+              <span className="text-primary text-3xl font-bold">₹499</span>
               <span className="text-gray-400 line-through ml-3">₹3,099</span>
               <span className="ml-3 bg-primary/20 text-primary px-2 py-1 rounded text-sm">
                 87% off
@@ -65,7 +65,7 @@ export default function UdemySection() {
             </div>
 
             <motion.a
-              href="#"
+              href="https://www.udemy.com/course/web-dev-master/?couponCode=NVDIN35"
               className="inline-block bg-primary text-black font-bold py-3 px-6 rounded-lg transition-all hover:bg-primary/90"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
@@ -83,7 +83,7 @@ export default function UdemySection() {
           >
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/KZ31wDjYleI?si=XAmNcq3la9KCTJCc"
+              src="https://www.youtube.com/embed/KZ31wDjYleI?si=XAmNcq3la9KCTJCcc"
               title="Most affordable web dev course launch"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
