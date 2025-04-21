@@ -71,7 +71,7 @@ const topics: Topic[] = [
     id: 10,
     name: "Node.js",
     size: "medium",
-    url: "https://example.com/nodejs",
+    url: "https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW",
   },
   {
     id: 11,
