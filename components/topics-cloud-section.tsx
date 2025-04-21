@@ -23,7 +23,7 @@ const topics: Topic[] = [
     id: 2,
     name: "MCP Server",
     size: "medium",
-    url: "https://example.com/mcp-server",
+    url: "https://www.youtube.com/watch?v=dZyQNy3-HjU",
   },
   {
     id: 3,
