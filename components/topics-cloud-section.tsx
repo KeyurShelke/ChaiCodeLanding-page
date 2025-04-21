@@ -49,7 +49,12 @@ const topics: Topic[] = [
     size: "small",
     url: "https://www.youtube.com/watch?v=j6szNSzw4BU&list=PLu71SKxNbfoDOf-6vAcKmazT92uLnWAgy",
   },
-  { id: 7, name: "NextJS", size: "small", url: "https://example.com/nextjs" },
+  {
+    id: 7,
+    name: "NextJS",
+    size: "small",
+    url: "https://www.youtube.com/watch?v=OgS1ZWZItno&list=PLu71SKxNbfoBAaWGtn9GA2PTw0HO0tXzq",
+  },
   {
     id: 8,
     name: "JavaScript",
