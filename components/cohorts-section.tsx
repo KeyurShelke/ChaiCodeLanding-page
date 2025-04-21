@@ -45,7 +45,7 @@ const cohorts = [
     originalPrice: "₹7999",
     tag: "Advanced",
     videoId: "VNb_LawBBWU",
-    link: "/buy/web-dev",
+    link: "https://courses.chaicode.com/learn/batch/about?bundleId=227321",
   },
 ];
 
