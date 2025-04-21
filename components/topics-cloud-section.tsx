@@ -43,7 +43,12 @@ const topics: Topic[] = [
     size: "medium",
     url: "https://www.youtube.com/watch?v=UwFFsS33xG8",
   },
-  { id: 6, name: "Django", size: "small", url: "https://example.com/django" },
+  {
+    id: 6,
+    name: "Django",
+    size: "small",
+    url: "https://www.youtube.com/watch?v=j6szNSzw4BU&list=PLu71SKxNbfoDOf-6vAcKmazT92uLnWAgy",
+  },
   { id: 7, name: "NextJS", size: "small", url: "https://example.com/nextjs" },
   {
     id: 8,
