@@ -41,7 +41,7 @@ const topics: Topic[] = [
     id: 5,
     name: "React Native",
     size: "medium",
-    url: "https://example.com/react-native",
+    url: "https://www.youtube.com/watch?v=UwFFsS33xG8",
   },
   { id: 6, name: "Django", size: "small", url: "https://example.com/django" },
   { id: 7, name: "NextJS", size: "small", url: "https://example.com/nextjs" },
