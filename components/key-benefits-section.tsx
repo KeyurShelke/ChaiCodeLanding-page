@@ -1,31 +1,36 @@
-"use client"
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import { Award, Gift, Home, Code, Beaker, BookOpen } from "lucide-react"
+"use client";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Award, Gift, Home, Code, Beaker, BookOpen } from "lucide-react";
+import Link from "next/link";
 
 const benefits = [
   {
     id: 1,
     title: "Taught by Professionals",
-    description: "Our cohorts are being taught by top industry experts and educators",
+    description:
+      "Our cohorts are being taught by top industry experts and educators",
     icon: <Award className="h-6 w-6 text-primary" />,
   },
   {
     id: 2,
     title: "Bounties",
-    description: "Earn rewards, from Cash to MacBook. Keeps you motivated to work hard",
+    description:
+      "Earn rewards, from Cash to MacBook. Keeps you motivated to work hard",
     icon: <Gift className="h-6 w-6 text-primary" />,
   },
   {
     id: 3,
     title: "Coding hostels",
-    description: "There is nothing like late night discussion with fellow learners and solving bugs",
+    description:
+      "There is nothing like late night discussion with fellow learners and solving bugs",
     icon: <Home className="h-6 w-6 text-primary" />,
   },
   {
     id: 4,
     title: "Peer Code Reviews",
-    description: "With Our internal tools like Mentor!, every coding assignment gets feedback to improve your code",
+    description:
+      "With Our internal tools like Mentor!, every coding assignment gets feedback to improve your code",
     icon: <Code className="h-6 w-6 text-primary" />,
   },
   {
@@ -38,10 +43,11 @@ const benefits = [
   {
     id: 6,
     title: "Revision classes",
-    description: "We have so many peer classes by fellow learners that you get so many chances to learn that topic",
+    description:
+      "We have so many peer classes by fellow learners that you get so many chances to learn that topic",
     icon: <BookOpen className="h-6 w-6 text-primary" />,
   },
-]
+];
 
 const alumniImages = [
   "/placeholder.svg?height=100&width=100",
@@ -50,13 +56,13 @@ const alumniImages = [
   "/placeholder.svg?height=100&width=100",
   "/placeholder.svg?height=100&width=100",
   "/placeholder.svg?height=100&width=100",
-]
+];
 
 export default function KeyBenefitsSection() {
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
-  })
+  });
 
   return (
     <section className="py-20 bg-black relative overflow-hidden" ref={ref}>
@@ -74,7 +80,8 @@ export default function KeyBenefitsSection() {
         >
           <h2 className="heading-large mb-4">Key Benefits of Cohorts</h2>
           <p className="heading-subtitle">
-            Cohorts are best way to learn because you finish the course in a timely manner
+            Cohorts are best way to learn because you finish the course in a
+            timely manner
           </p>
         </motion.div>
 
@@ -88,12 +95,17 @@ export default function KeyBenefitsSection() {
               className="bg-gradient-to-b from-gray-900 to-black rounded-xl p-6 border border-gray-800 group"
               whileHover={{
                 y: -10,
-                boxShadow: "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
+                boxShadow:
+                  "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
                 borderColor: "rgba(249, 115, 22, 0.3)",
               }}
             >
-              <div className="bg-primary/10 p-3 rounded-lg inline-block mb-4">{benefit.icon}</div>
-              <h3 className="text-xl font-bold mb-2 text-primary">{benefit.title}</h3>
+              <div className="bg-primary/10 p-3 rounded-lg inline-block mb-4">
+                {benefit.icon}
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-primary">
+                {benefit.title}
+              </h3>
               <p className="text-gray-400">{benefit.description}</p>
             </motion.div>
           ))}
@@ -107,11 +119,15 @@ export default function KeyBenefitsSection() {
         >
           <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6">
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-primary">Alumni Network and job listings</h3>
+              <h3 className="text-2xl font-bold mb-4 text-primary">
+                Alumni Network and job listings
+              </h3>
               <p className="text-gray-400">
-                The alumni Network that you always wished for in your college. We have a dedicated platform where
-                students get to know each other, do projects, make agencies and join freelancing. Our HR team also post
-                regular job updates that you can apply directly whenever you are ready
+                The alumni Network that you always wished for in your college.
+                We have a dedicated platform where students get to know each
+                other, do projects, make agencies and join freelancing. Our HR
+                team also post regular job updates that you can apply directly
+                whenever you are ready
               </p>
             </div>
             <div className="flex items-center justify-center">
@@ -138,12 +154,19 @@ export default function KeyBenefitsSection() {
             </div>
           </div>
           <div className="mt-6 text-center">
-            <motion.button className="button-glow" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-              Join Cohorts Live Classes
-            </motion.button>
+            <Link
+              href="https://courses.chaicode.com/learn/view-all?show=batch&type=17"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="button-glow">
+                Join Cohorts Live Classes
+                <span className="ml-2 h-3 w-3 rounded-full bg-red-500 animate-pulse"></span>
+              </button>
+            </Link>
           </div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
