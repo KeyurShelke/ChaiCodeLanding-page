@@ -35,7 +35,7 @@ const cohorts = [
     originalPrice: "₹8999",
     tag: "Limited Seats",
     videoId: "Kjd-SWpe1do",
-    link: "/buy/web-dev",
+    link: "https://courses.chaicode.com/learn/batch/about?bundleId=227817",
   },
   {
     id: 4,
