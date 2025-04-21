@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 import {
   BookOpen,
   Code,
@@ -218,13 +219,16 @@ export default function WhyChaiCodeSection() {
               transition={{ duration: 0.6, delay: 0.7 }}
               className="mt-8"
             >
-              <motion.button
-                className="button-glow"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+              <Link
+                href="https://courses.chaicode.com/learn/view-all?show=batch&type=17"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Join Cohorts Live Classes
-              </motion.button>
+                <button className="button-glow">
+                  Join Cohorts Live Classes
+                  <span className="ml-2 h-3 w-3 rounded-full bg-red-500 animate-pulse"></span>
+                </button>
+              </Link>
             </motion.div>
           </div>
 
