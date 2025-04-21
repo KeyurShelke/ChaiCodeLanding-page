@@ -88,11 +88,16 @@ const topics: Topic[] = [
   { id: 13, name: "AWS", size: "medium", url: "https://example.com/aws" },
   {
     id: 14,
-    name: "Firebase",
+    name: "JWT",
     size: "small",
-    url: "https://example.com/firebase",
+    url: "https://www.youtube.com/watch?v=xrj3zzaqODw",
   },
-  { id: 15, name: "React", size: "large", url: "https://example.com/react" },
+  {
+    id: 15,
+    name: "React",
+    size: "large",
+    url: "https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige",
+  },
 ];
 
 export default function TopicsCloudSection() {
