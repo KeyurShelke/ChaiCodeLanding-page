@@ -63,9 +63,9 @@ const topics: Topic[] = [
   },
   {
     id: 9,
-    name: "TypeScript",
+    name: "Auth",
     size: "medium",
-    url: "https://example.com/typescript",
+    url: "https://www.youtube.com/watch?v=3BEn2E9PvBM&list=PLu71SKxNbfoCXO80Z4miZHTL5GxfFbz7A",
   },
   {
     id: 10,
