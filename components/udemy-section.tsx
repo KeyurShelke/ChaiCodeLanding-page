@@ -36,7 +36,13 @@ export default function UdemySection() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -20 }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-b from-gray-900 to-black rounded-xl p-8 border border-gray-800"
+            whileHover={{
+              y: -10,
+              boxShadow:
+                "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
+              borderColor: "rgba(249, 115, 22, 0.3)",
+            }}
+            className="bg-gradient-to-b from-gray-900 to-black rounded-xl p-8 border border-gray-800 transition-all duration-300"
           >
             <h3 className="text-2xl font-bold mb-4">
               Complete web development course
