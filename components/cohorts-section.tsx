@@ -14,7 +14,8 @@ const cohorts = [
     price: "₹6999",
     originalPrice: "₹8999",
     tag: "Most Popular",
-    videoId: "8yyrAfsjPTw", // Add YouTube video ID for each cohort
+    videoId: "8yyrAfsjPTw",
+    link: "https://courses.chaicode.com/learn/batch/about?bundleId=214297",
   },
   {
     id: 2,
@@ -23,7 +24,8 @@ const cohorts = [
     price: "₹299",
     originalPrice: "₹499",
     tag: "New Batch",
-    videoId: "Fw3FezexzV0", // Replace with actual video IDs
+    videoId: "Fw3FezexzV0",
+    link: "/buy/web-dev",
   },
   {
     id: 3,
@@ -32,7 +34,8 @@ const cohorts = [
     price: "₹6999",
     originalPrice: "₹8999",
     tag: "Limited Seats",
-    videoId: "Kjd-SWpe1do", // Replace with actual video IDs
+    videoId: "Kjd-SWpe1do",
+    link: "/buy/web-dev",
   },
   {
     id: 4,
@@ -41,7 +44,8 @@ const cohorts = [
     price: "₹4999",
     originalPrice: "₹7999",
     tag: "Advanced",
-    videoId: "VNb_LawBBWU", // Replace with actual video IDs
+    videoId: "VNb_LawBBWU",
+    link: "/buy/web-dev",
   },
 ];
 
@@ -221,7 +225,7 @@ export default function CohortsSection() {
                     {cohort.originalPrice}
                   </span>
                 </div>
-                <Link href={`/cohorts/${cohort.id}`}>
+                <Link href={cohort.link}>
                   <motion.button
                     className="w-full button-glow"
                     whileHover={{ scale: 1.03 }}
