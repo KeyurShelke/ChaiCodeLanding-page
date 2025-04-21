@@ -19,8 +19,8 @@ const cohorts = [
   },
   {
     id: 2,
-    title: "Devops",
-    description: "Master Devops!",
+    title: "Devops for Developers Cohort - Live 1.0",
+    description: "Master Devops for web and more!",
     price: "₹4999",
     originalPrice: "₹7999",
     tag: "New Batch",
@@ -40,7 +40,7 @@ const cohorts = [
   {
     id: 4,
     title: "Gen AI Cohort - Live 1.0",
-    description: "Master artificial intelligence and machine learning",
+    description: "Master advanced Artifical Intelligance and ML ",
     price: "₹4999",
     originalPrice: "₹7999",
     tag: "Advanced",
