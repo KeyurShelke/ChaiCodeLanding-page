@@ -85,7 +85,12 @@ const topics: Topic[] = [
     size: "medium",
     url: "https://www.youtube.com/watch?v=q8EevlEpQ2A",
   },
-  { id: 13, name: "AWS", size: "medium", url: "https://example.com/aws" },
+  {
+    id: 13,
+    name: "AWS",
+    size: "medium",
+    url: "https://www.youtube.com/watch?v=TLf5OASKf18",
+  },
   {
     id: 14,
     name: "JWT",
