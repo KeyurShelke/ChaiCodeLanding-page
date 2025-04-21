@@ -174,7 +174,7 @@ export default function TopicsCloudSection() {
           className="flex justify-center"
         >
           <Link
-            href="https://courses.chaicode.com/learn/view-all?show=batch&type=17"
+            href="https://www.youtube.com/@chaiaurcode"
             target="_blank"
             rel="noopener noreferrer"
           >
