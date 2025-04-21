@@ -2,37 +2,82 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ExternalLink } from "lucide-react";
-import Link from "next/link";
 
 // Define a type for the topic
 type Topic = {
   id: number;
   name: string;
-  size: "small" | "medium" | "large"; // Restrict size to specific string literals
-  link?: string; // Add link property, making it optional
+  size: "small" | "medium" | "large"; // Explicitly define the size type
+  url: string;
 };
 
+// Define the topics array with the Topic type
 const topics: Topic[] = [
   {
     id: 1,
     name: "Docker",
     size: "medium",
-    link: "https://www.youtube.com/embed/oBLpqSHc3lA?si=2gMIUJexZofFS_SO",
+    url: "https://www.youtube.com/watch?v=oBLpqSHc3lA&t=1s",
   },
-  { id: 2, name: "MCP Server", size: "medium", link: "" },
-  { id: 3, name: "Kubernetes", size: "medium", link: "" },
-  { id: 4, name: "Python", size: "medium", link: "" },
-  { id: 5, name: "React Native", size: "medium", link: "" },
-  { id: 6, name: "Django", size: "medium", link: "" },
-  { id: 7, name: "NextJS", size: "medium", link: "" },
-  { id: 8, name: "JavaScript", size: "medium", link: "" },
-  { id: 9, name: "TypeScript", size: "medium", link: "" },
-  { id: 10, name: "Node.js", size: "medium", link: "" },
-  { id: 11, name: "MongoDB", size: "medium", link: "" },
-  { id: 12, name: "GraphQL", size: "medium", link: "" },
-  { id: 13, name: "AWS", size: "medium", link: "" },
-  { id: 14, name: "Firebase", size: "medium", link: "" },
-  { id: 15, name: "React", size: "medium", link: "" },
+  {
+    id: 2,
+    name: "MCP Server",
+    size: "medium",
+    url: "https://example.com/mcp-server",
+  },
+  {
+    id: 3,
+    name: "Kubernetes",
+    size: "medium",
+    url: "https://example.com/kubernetes",
+  },
+  { id: 4, name: "Python", size: "medium", url: "https://example.com/python" },
+  {
+    id: 5,
+    name: "React Native",
+    size: "medium",
+    url: "https://example.com/react-native",
+  },
+  { id: 6, name: "Django", size: "small", url: "https://example.com/django" },
+  { id: 7, name: "NextJS", size: "small", url: "https://example.com/nextjs" },
+  {
+    id: 8,
+    name: "JavaScript",
+    size: "large",
+    url: "https://example.com/javascript",
+  },
+  {
+    id: 9,
+    name: "TypeScript",
+    size: "medium",
+    url: "https://example.com/typescript",
+  },
+  {
+    id: 10,
+    name: "Node.js",
+    size: "medium",
+    url: "https://example.com/nodejs",
+  },
+  {
+    id: 11,
+    name: "MongoDB",
+    size: "small",
+    url: "https://example.com/mongodb",
+  },
+  {
+    id: 12,
+    name: "GraphQL",
+    size: "small",
+    url: "https://example.com/graphql",
+  },
+  { id: 13, name: "AWS", size: "medium", url: "https://example.com/aws" },
+  {
+    id: 14,
+    name: "Firebase",
+    size: "small",
+    url: "https://example.com/firebase",
+  },
+  { id: 15, name: "React", size: "large", url: "https://example.com/react" },
 ];
 
 export default function TopicsCloudSection() {
@@ -74,8 +119,11 @@ export default function TopicsCloudSection() {
 
         <div className="flex flex-wrap justify-center gap-4 mb-8">
           {topics.map((topic, index) => (
-            <motion.div
+            <motion.a
               key={topic.id}
+              href={topic.url}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.8 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
@@ -89,7 +137,7 @@ export default function TopicsCloudSection() {
               )} bg-gradient-to-b from-gray-900 to-black rounded-lg border border-gray-800 font-medium cursor-pointer`}
             >
               {topic.name}
-            </motion.div>
+            </motion.a>
           ))}
         </div>
 
@@ -99,16 +147,10 @@ export default function TopicsCloudSection() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="flex justify-center"
         >
-          <Link
-            href="https://www.youtube.com/@chaiaurcode"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="button-glow">
-              Link to youtube videos
-              <span className="ml-2 h-3 w-3 rounded-full bg-red-500 animate-pulse"></span>
-            </button>
-          </Link>
+          <div className="button-glow inline-flex items-center gap-2">
+            <ExternalLink className="h-5 w-5" />
+            <span>Link to youtube videos</span>
+          </div>
         </motion.div>
       </div>
     </section>
