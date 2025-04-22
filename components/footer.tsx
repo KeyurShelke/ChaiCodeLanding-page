@@ -23,7 +23,10 @@ const footerLinks = {
   resources: [
     { name: "Docs", url: "https://docs.chaicode.com/" },
     { name: "Privacy Policy", url: "https://www.chaicode.com/privacy-policy" },
-    { name: "Terms of Service", url: "/terms-of-service" },
+    {
+      name: "Terms of Service",
+      url: "https://www.chaicode.com/terms-of-services",
+    },
     { name: "Pricing Policy", url: "/pricing-policy" },
     { name: "Refund Policy", url: "/refund-policy" },
   ],
