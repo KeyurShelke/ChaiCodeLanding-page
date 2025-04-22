@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Star } from "lucide-react";
+import Link from "next/link";
 
 export default function freeapisection() {
   const [ref, inView] = useInView({
@@ -67,14 +68,16 @@ export default function freeapisection() {
               <span className="ml-3 bg-primary/20 text-primary px-2 py-1 rounded text-sm"></span>
             </div>
 
-            <motion.a
-              href="https://www.udemy.com/course/web-dev-master/?couponCode=NVDIN35"
-              className="inline-block bg-primary text-black font-bold py-3 px-6 rounded-lg transition-all hover:bg-primary/90"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
+            <Link
+              href="https://www.youtube.com/@chaiaurcode"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Check Udemy Courses
-            </motion.a>
+              <button className="button-glow">
+                Check Free API-docs
+                <span className="ml-2 h-3 w-3 rounded-full bg-red-500 animate-pulse"></span>
+              </button>
+            </Link>
           </motion.div>
 
           {/* Right column - Video embed */}
