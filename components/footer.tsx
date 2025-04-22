@@ -41,7 +41,7 @@ const socialLinks = [
   },
   {
     name: "Twitter",
-    url: "https://twitter.com/yourname",
+    url: "https://x.com/hiteshdotcom",
     icon: <Twitter size={20} />,
   },
   {
