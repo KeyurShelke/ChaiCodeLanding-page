@@ -8,7 +8,7 @@ import { Github, Twitter, Linkedin, Instagram, Youtube } from "lucide-react";
 // Footer links organized by category
 const footerLinks = {
   learning: [
-    { name: "Courses", url: "/courses" },
+    { name: "Courses", url: "https://courses.chaicode.com/learn" },
     { name: "Cohort", url: "/cohort" },
     { name: "Coding Hero", url: "/coding-hero" },
     { name: "FreeAPI", url: "/freeapi" },
@@ -53,9 +53,8 @@ const socialLinks = [
 ];
 
 export default function Footer() {
-  // Replace with your actual logo URL and company name
   const logoUrl = "/chai-white.svg?height=40&width=40";
-  const logoAlt = "/cclogo.png";
+  const logoAlt = "/";
   const companyName = "ChaiCode";
 
   return (
