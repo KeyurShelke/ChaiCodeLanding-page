@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useRef, useEffect } from "react"
-import { motion, useAnimation } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import { Star } from "lucide-react"
+import { useRef, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Star } from "lucide-react";
 
 const testimonials = [
   {
@@ -11,7 +11,7 @@ const testimonials = [
     name: "Priya Sharma",
     role: "Frontend Developer",
     company: "Microsoft",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/g1.avif?height=100&width=100",
     content:
       "The structured curriculum and hands-on projects helped me land my dream job. The mentors are incredibly supportive and knowledgeable.",
     rating: 5,
@@ -66,25 +66,29 @@ const testimonials = [
       "The DevOps module was comprehensive and practical. I implemented the learnings directly in my work environment.",
     rating: 5,
   },
-]
+];
 
 export default function TestimonialsSection() {
-  const containerRef1 = useRef<HTMLDivElement>(null)
-  const containerRef2 = useRef<HTMLDivElement>(null)
-  const controls = useAnimation()
+  const containerRef1 = useRef<HTMLDivElement>(null);
+  const containerRef2 = useRef<HTMLDivElement>(null);
+  const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
-  })
+  });
 
   useEffect(() => {
     if (inView) {
-      controls.start("visible")
+      controls.start("visible");
     }
-  }, [controls, inView])
+  }, [controls, inView]);
 
   return (
-    <section className="py-20 bg-gradient-to-b from-black to-black/95" id="testimonials" ref={ref}>
+    <section
+      className="py-20 bg-gradient-to-b from-black to-black/95"
+      id="testimonials"
+      ref={ref}
+    >
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -108,7 +112,8 @@ export default function TestimonialsSection() {
                   className="flex-shrink-0 w-80 md:w-96 bg-card rounded-xl p-6 border border-gray-800 hover-card"
                   whileHover={{
                     scale: 1.03,
-                    boxShadow: "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
+                    boxShadow:
+                      "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
                   }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
@@ -128,7 +133,10 @@ export default function TestimonialsSection() {
                   <p className="text-gray-300 mb-4">{testimonial.content}</p>
                   <div className="flex">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
+                      <Star
+                        key={i}
+                        className="h-5 w-5 text-primary fill-primary"
+                      />
                     ))}
                   </div>
                 </motion.div>
@@ -140,7 +148,8 @@ export default function TestimonialsSection() {
                   className="flex-shrink-0 w-80 md:w-96 bg-card rounded-xl p-6 border border-gray-800 hover-card"
                   whileHover={{
                     scale: 1.03,
-                    boxShadow: "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
+                    boxShadow:
+                      "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
                   }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
@@ -160,7 +169,10 @@ export default function TestimonialsSection() {
                   <p className="text-gray-300 mb-4">{testimonial.content}</p>
                   <div className="flex">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
+                      <Star
+                        key={i}
+                        className="h-5 w-5 text-primary fill-primary"
+                      />
                     ))}
                   </div>
                 </motion.div>
@@ -177,7 +189,8 @@ export default function TestimonialsSection() {
                   className="flex-shrink-0 w-80 md:w-96 bg-card rounded-xl p-6 border border-gray-800 hover-card"
                   whileHover={{
                     scale: 1.03,
-                    boxShadow: "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
+                    boxShadow:
+                      "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
                   }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
@@ -197,7 +210,10 @@ export default function TestimonialsSection() {
                   <p className="text-gray-300 mb-4">{testimonial.content}</p>
                   <div className="flex">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
+                      <Star
+                        key={i}
+                        className="h-5 w-5 text-primary fill-primary"
+                      />
                     ))}
                   </div>
                 </motion.div>
@@ -209,7 +225,8 @@ export default function TestimonialsSection() {
                   className="flex-shrink-0 w-80 md:w-96 bg-card rounded-xl p-6 border border-gray-800 hover-card"
                   whileHover={{
                     scale: 1.03,
-                    boxShadow: "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
+                    boxShadow:
+                      "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
                   }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
@@ -229,7 +246,10 @@ export default function TestimonialsSection() {
                   <p className="text-gray-300 mb-4">{testimonial.content}</p>
                   <div className="flex">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
+                      <Star
+                        key={i}
+                        className="h-5 w-5 text-primary fill-primary"
+                      />
                     ))}
                   </div>
                 </motion.div>
@@ -239,5 +259,5 @@ export default function TestimonialsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
