@@ -27,7 +27,7 @@ const footerLinks = {
       name: "Terms of Service",
       url: "https://www.chaicode.com/terms-of-services",
     },
-    { name: "Pricing Policy", url: "/pricing-policy" },
+    { name: "Pricing Policy", url: "https://www.chaicode.com/pricing-policy" },
     { name: "Refund Policy", url: "/refund-policy" },
   ],
 };
