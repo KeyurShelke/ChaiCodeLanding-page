@@ -46,7 +46,7 @@ const socialLinks = [
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/yourname",
+    url: "https://www.linkedin.com/in/hiteshchoudhary/?originalSubdomain=in",
     icon: <Linkedin size={20} />,
   },
   {
