@@ -50,12 +50,12 @@ const benefits = [
 ];
 
 const alumniImages = [
-  "/placeholder.svg?height=100&width=100",
-  "/placeholder.svg?height=100&width=100",
-  "/placeholder.svg?height=100&width=100",
-  "/placeholder.svg?height=100&width=100",
-  "/placeholder.svg?height=100&width=100",
-  "/placeholder.svg?height=100&width=100",
+  "/img0.jpg?height=100&width=100",
+  "/img1.jpg?height=100&width=100",
+  "/img2.jpg?height=100&width=100",
+  "/img3.jpg?height=100&width=100",
+  "/img4.jpg?height=100&width=100",
+  "/img5.jpg?height=100&width=100",
 ];
 
 export default function KeyBenefitsSection() {
