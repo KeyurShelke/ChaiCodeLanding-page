@@ -21,7 +21,7 @@ const testimonials = [
     name: "Rahul Verma",
     role: "Full Stack Developer",
     company: "Amazon",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/b1.webp?height=100&width=100",
     content:
       "I tried many online courses before, but nothing compares to the community and support system here. Worth every penny!",
     rating: 5,
@@ -31,7 +31,7 @@ const testimonials = [
     name: "Ananya Patel",
     role: "Mobile Developer",
     company: "Swiggy",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/g2.webp?height=100&width=100",
     content:
       "The React Native cohort was exactly what I needed to transition into mobile development. Now I'm building apps for a leading company.",
     rating: 5,
@@ -41,7 +41,7 @@ const testimonials = [
     name: "Vikram Singh",
     role: "Data Scientist",
     company: "Flipkart",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/b2.webp?height=100&width=100",
     content:
       "The data science program is rigorous but extremely rewarding. The real-world projects prepared me for actual work scenarios.",
     rating: 5,
@@ -51,7 +51,7 @@ const testimonials = [
     name: "Neha Gupta",
     role: "Backend Developer",
     company: "Razorpay",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/g3.webp?height=100&width=100",
     content:
       "The mentorship and networking opportunities are unmatched. I connected with industry experts who guided my career path.",
     rating: 5,
@@ -61,7 +61,7 @@ const testimonials = [
     name: "Arjun Reddy",
     role: "DevOps Engineer",
     company: "Zerodha",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/b3.jpg?height=100&width=100",
     content:
       "The DevOps module was comprehensive and practical. I implemented the learnings directly in my work environment.",
     rating: 5,
