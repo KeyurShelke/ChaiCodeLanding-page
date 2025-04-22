@@ -9,10 +9,16 @@ import { Github, Twitter, Linkedin, Instagram, Youtube } from "lucide-react";
 const footerLinks = {
   learning: [
     { name: "Courses", url: "https://courses.chaicode.com/learn" },
-    { name: "Cohort", url: "/cohort" },
-    { name: "Coding Hero", url: "/coding-hero" },
-    { name: "FreeAPI", url: "/freeapi" },
-    { name: "Masterji", url: "/masterji" },
+    {
+      name: "Cohort",
+      url: "https://courses.chaicode.com/learn/view-all?show=batch&type=17",
+    },
+    {
+      name: "Coding Hero",
+      url: "https://courses.chaicode.com/learn/batch/about?bundleId=226894",
+    },
+    { name: "FreeAPI", url: "https://freeapi.app/" },
+    { name: "Masterji", url: "https://masterji.co/login" },
   ],
   resources: [
     { name: "Docs", url: "/docs" },
