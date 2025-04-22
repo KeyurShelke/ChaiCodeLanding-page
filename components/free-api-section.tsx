@@ -86,7 +86,7 @@ export default function freeapisection() {
           >
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/KZ31wDjYleI?si=XAmNcq3la9KCTJCcc"
+              src="https://www.youtube.com/embed/DxedlhTyR7Q?si=3rSNaKj4bglPTj8i"
               title="Most affordable web dev course launch"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
