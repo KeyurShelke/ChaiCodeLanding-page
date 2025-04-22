@@ -56,7 +56,7 @@ const socialLinks = [
   },
   {
     name: "YouTube",
-    url: "https://youtube.com/c/yourname",
+    url: "https://www.youtube.com/@chaiaurcode",
     icon: <Youtube size={20} />,
   },
 ];
