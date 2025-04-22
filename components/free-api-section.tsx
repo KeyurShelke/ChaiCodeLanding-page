@@ -43,28 +43,28 @@ export default function freeapisection() {
             }}
             className="bg-gradient-to-b from-gray-900 to-black rounded-xl p-8 border border-gray-800 transition-all duration-300"
           >
-            <h3 className="text-2xl font-bold mb-4">
-              Complete web development course
-            </h3>
+            <h3 className="text-2xl font-bold mb-4">FreeAPI - Open Source</h3>
             <p className="text-gray-400 mb-6">
-              Only web development course that you will need. Covers HTML, CSS,
-              Tailwind, Node, React, MongoDB, Prisma, Deployment etc
+              Unlock Your Potential with Our API Hub. Our API Hub is designed to
+              streamline your learning experience in API handling across various
+              programming languages. With our resources, you can efficiently
+              build and showcase your frontend portfolio in both web and mobile
+              applications.Join us to enhance your skills and take your coding
+              projects to the next level!
             </p>
 
             <div className="flex items-center mb-4">
-              <div className="text-4xl font-bold mr-3">4.7</div>
+              <div className="text-4xl font-bold mr-3"></div>
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 text-primary fill-primary" />
                 ))}
               </div>
-              <div className="ml-2 text-sm text-gray-400">Top Rated</div>
+              <div className="ml-2 text-sm text-gray-400"></div>
             </div>
 
             <div className="flex items-center mb-6">
-              <span className="ml-3 bg-primary/20 text-primary px-2 py-1 rounded text-sm">
-                87% off
-              </span>
+              <span className="ml-3 bg-primary/20 text-primary px-2 py-1 rounded text-sm"></span>
             </div>
 
             <motion.a
@@ -87,7 +87,7 @@ export default function freeapisection() {
             <iframe
               className="w-full h-full"
               src="https://www.youtube.com/embed/DxedlhTyR7Q?si=3rSNaKj4bglPTj8i"
-              title="Most affordable web dev course launch"
+              title=""
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
