@@ -51,7 +51,7 @@ const socialLinks = [
   },
   {
     name: "Instagram",
-    url: "https://instagram.com/yourname",
+    url: "https://www.instagram.com/hiteshchoudharyofficial/?hl=en",
     icon: <Instagram size={20} />,
   },
   {
