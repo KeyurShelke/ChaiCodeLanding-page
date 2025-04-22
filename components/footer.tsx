@@ -21,7 +21,7 @@ const footerLinks = {
     { name: "Masterji", url: "https://masterji.co/login" },
   ],
   resources: [
-    { name: "Docs", url: "/docs" },
+    { name: "Docs", url: "https://docs.chaicode.com/" },
     { name: "Privacy Policy", url: "/privacy-policy" },
     { name: "Terms of Service", url: "/terms-of-service" },
     { name: "Pricing Policy", url: "/pricing-policy" },
