@@ -36,7 +36,7 @@ const footerLinks = {
 const socialLinks = [
   {
     name: "Github",
-    url: "https://github.com/yourname",
+    url: "https://github.com/hiteshchoudhary",
     icon: <Github size={20} />,
   },
   {
