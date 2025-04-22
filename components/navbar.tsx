@@ -34,11 +34,11 @@ export default function Navbar() {
           {/* Logo - Left */}
           <div className="absolute left-4">
             <Image
-              src="/cclogo.png" // Path to your logo in the public folder
+              src="/cclogo.png"
               alt="Your Logo"
-              width={120} // Adjust width as needed
-              height={40} // Adjust height as needed
-              className="h-10 w-auto" // Adjust styling as needed
+              width={120}
+              height={40}
+              className="h-10 w-auto"
             />
           </div>
 
