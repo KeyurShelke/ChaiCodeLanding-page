@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Star } from "lucide-react";
+import Link from "next/link";
 
 export default function UdemySection() {
   const [ref, inView] = useInView({
@@ -70,14 +71,16 @@ export default function UdemySection() {
               </span>
             </div>
 
-            <motion.a
+            <Link
               href="https://www.udemy.com/course/web-dev-master/?couponCode=NVDIN35"
-              className="inline-block bg-primary text-black font-bold py-3 px-6 rounded-lg transition-all hover:bg-primary/90"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Check Udemy Courses
-            </motion.a>
+              <button className="button-glow">
+                Check Udemy Courses
+                <span className="ml-2 h-3 w-3 rounded-full bg-red-500 animate-pulse"></span>
+              </button>
+            </Link>
           </motion.div>
 
           {/* Right column - Video embed */}
