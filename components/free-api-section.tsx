@@ -69,7 +69,7 @@ export default function freeapisection() {
             </div>
 
             <Link
-              href="https://www.youtube.com/@chaiaurcode"
+              href="https://freeapi.app/"
               target="_blank"
               rel="noopener noreferrer"
             >
