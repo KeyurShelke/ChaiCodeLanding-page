@@ -33,11 +33,11 @@ const tweets = [
   },
   {
     id: 4,
-    username: "@js_ninja",
+    username: "@AngshumanB17",
     role: "Full Stack Developer",
     content:
-      '"The community is what makes this special. I\'ve made friends and found job opportunities."',
-    twitterLink: "https://twitter.com/js_ninja/status/1234567893",
+      '"We had the incredible opportunity to showcase our UI library CrazxyUI during a YouTube Live Demo Day, and received amazing feedback from @Hiteshdotcom @piyushgarg_dev @mannupaaji Hearing their feedback, suggestions, and encouragement on our work felt surreal."',
+    twitterLink: "https://x.com/AngshumanB17/status/1914020858852511965",
   },
 ];
 
