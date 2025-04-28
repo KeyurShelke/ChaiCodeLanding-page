@@ -20,7 +20,7 @@ const tweets = [
     role: "Developer",
     content:
       '"Just won ₹10K in a giveaway! Feeling incredibly lucky and grateful.Thank you, @Hiteshdotcomand @piyushgarg_devfor the fantastic giveaway. This has doubled my motivation."',
-    twitterLink: "",
+    twitterLink: "https://x.com/jahanweee/status/1907045909394788416",
   },
   {
     id: 3,
