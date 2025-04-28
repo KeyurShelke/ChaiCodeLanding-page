@@ -3,22 +3,24 @@
 import { useRef, useEffect } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { Twitter } from "lucide-react";
-import Link from "next/link";
 
 const tweets = [
   {
     id: 1,
-    username: "@dev_michael",
-    role: "Mobile Developer",
+    username: "@saurabhHD",
+    role: "Full stack developer",
     content:
-      '"The mentorship and code reviews helped me improve faster than any other platform."',
+      '"Feeling super blessed to receive a prize from Hitesh sir ! Now my motivation level is officially higher than my phones screen time 😁. Thank you sir "',
+    twitterLink:
+      "https://x.com/saurabhHD/status/1906390359841640771?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1906390359841640771%7Ctwgr%5E1116824cb32c80ef4777006c7dffa62d5b21774f%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fwww.chaicode.com%2F",
   },
   {
     id: 2,
-    username: "@sarah_codes",
-    role: "Frontend Developer",
+    username: "@jahanweee",
+    role: "Developer",
     content:
-      '"This course completely changed my career path. The instructors are incredibly supportive!"',
+      '"Just won ₹10K in a giveaway! Feeling incredibly lucky and grateful.Thank you, @Hiteshdotcomand @piyushgarg_devfor the fantastic giveaway. This has doubled my motivation."',
+    twitterLink: "",
   },
   {
     id: 3,
@@ -26,6 +28,7 @@ const tweets = [
     role: "Software Engineer",
     content:
       '"I landed my dream job at Google after completing this program. Best investment ever!"',
+    twitterLink: "https://twitter.com/tech_alex/status/1234567892",
   },
   {
     id: 4,
@@ -33,6 +36,7 @@ const tweets = [
     role: "Full Stack Developer",
     content:
       '"The community is what makes this special. I\'ve made friends and found job opportunities."',
+    twitterLink: "https://twitter.com/js_ninja/status/1234567893",
   },
 ];
 
@@ -47,6 +51,10 @@ export default function TweetCarousel() {
       controls.start("visible");
     }
   }, [controls, isInView]);
+
+  const handleTweetClick = (twitterLink: string) => {
+    window.open(twitterLink, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <section
@@ -66,20 +74,14 @@ export default function TweetCarousel() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <Link
-            href="https://x.com/ChaiCodeHQ"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="button-glow inline-block px-4 py-1 mb-4">
-              Community Love
-            </button>
-            <h2 className="heading-large mb-4">Tweet Love</h2>
-            <p className="heading-subtitle">
-              See what our community is saying about their learning experience
-              with us
-            </p>
-          </Link>
+          <span className="button-glow inline-block px-4 py-1 mb-4">
+            Community Love
+          </span>
+          <h2 className="heading-large mb-4">Tweet Love</h2>
+          <p className="heading-subtitle">
+            See what our community is saying about their learning experience
+            with us
+          </p>
         </motion.div>
 
         <div className="relative overflow-hidden" ref={containerRef}>
@@ -87,7 +89,8 @@ export default function TweetCarousel() {
             {tweets.map((tweet) => (
               <motion.div
                 key={tweet.id}
-                className="flex-shrink-0 w-80 md:w-96 bg-gradient-to-b from-gray-900 to-black rounded-xl p-6 border border-gray-800 group"
+                className="flex-shrink-0 w-80 md:w-96 bg-gradient-to-b from-gray-900 to-black rounded-xl p-6 border border-gray-800 group cursor-pointer"
+                onClick={() => handleTweetClick(tweet.twitterLink)}
                 whileHover={{
                   scale: 1.03,
                   boxShadow:
@@ -108,6 +111,9 @@ export default function TweetCarousel() {
                     </div>
                   </div>
                   <p className="text-gray-300 italic">{tweet.content}</p>
+                  <div className="mt-4 text-xs text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                    Click to view on Twitter
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -115,7 +121,8 @@ export default function TweetCarousel() {
             {tweets.map((tweet) => (
               <motion.div
                 key={`duplicate-${tweet.id}`}
-                className="flex-shrink-0 w-80 md:w-96 bg-gradient-to-b from-gray-900 to-black rounded-xl p-6 border border-gray-800 group"
+                className="flex-shrink-0 w-80 md:w-96 bg-gradient-to-b from-gray-900 to-black rounded-xl p-6 border border-gray-800 group cursor-pointer"
+                onClick={() => handleTweetClick(tweet.twitterLink)}
                 whileHover={{
                   scale: 1.03,
                   boxShadow:
@@ -136,6 +143,9 @@ export default function TweetCarousel() {
                     </div>
                   </div>
                   <p className="text-gray-300 italic">{tweet.content}</p>
+                  <div className="mt-4 text-xs text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                    Click to view on Twitter
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -148,16 +158,10 @@ export default function TweetCarousel() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Link
-              href="https://courses.chaicode.com/learn/view-all?show=batch&type=17"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button className="button-glow">
-                Join Cohorts Live Classes
-                <span className="ml-2 h-3 w-3 rounded-full bg-red-500 animate-pulse"></span>
-              </button>
-            </Link>
+            <button className="button-glow">
+              Join Cohorts Live Classes
+              <span className="ml-2 h-3 w-3 rounded-full bg-red-500 animate-pulse"></span>
+            </button>
           </motion.div>
         </div>
 

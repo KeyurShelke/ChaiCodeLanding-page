@@ -25,7 +25,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0.4 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "bg-black/80 backdrop-blur-md py-2" : "bg-transparent py-4"
       }`}
     >
@@ -43,6 +43,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation - Center */}
+
           <nav className="hidden md:flex items-center space-x-8">
             <Link
               href="https://www.udemy.com/course/web-dev-master/?couponCode=NVDIN35"

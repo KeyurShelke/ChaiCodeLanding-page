@@ -52,10 +52,10 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={controls}
       >
-        <h1 className="text-[5rem] font-bold leading-tight mb-6">
-          <span className="text-gray-200">Consistency and</span>
-          <br />
-          <span className="text-primary">Community</span>
+        <h1 className="text-[5rem] md:text-[6rem] font-bold leading-tight mb-6">
+          <span className="text-gray-200">
+            Consistency and <span className="text-primary">Community</span>
+          </span>
         </h1>
 
         <p className="text-xl text-gray-300 mb-8">
