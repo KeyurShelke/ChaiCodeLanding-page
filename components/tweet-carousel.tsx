@@ -166,10 +166,13 @@ export default function TweetCarousel() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <button className="button-glow">
+            <Link
+              href="https://courses.chaicode.com/learn/view-all?show=batch&type=17"
+              className="button-glow inline-flex items-center"
+            >
               Join Cohorts Live Classes
               <span className="ml-2 h-3 w-3 rounded-full bg-red-500 animate-pulse"></span>
-            </button>
+            </Link>
           </motion.div>
         </div>
 
