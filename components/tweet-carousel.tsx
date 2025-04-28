@@ -24,11 +24,12 @@ const tweets = [
   },
   {
     id: 3,
-    username: "@tech_alex",
+    username: "@prasenjitbasu44",
     role: "Software Engineer",
     content:
-      '"I landed my dream job at Google after completing this program. Best investment ever!"',
-    twitterLink: "https://twitter.com/tech_alex/status/1234567892",
+      '" Thank you will be a very small word for you all. I cant express my love and respect for you all in words. I had never heard or joined any bootcamp who gave away the fees of a student just to motivate other students and this can only be done in our WebDev Cohort-1 by Hitesh Sir "',
+    twitterLink:
+      "https://x.com/prasenjitbasu44/status/1906393735203836076?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1906393735203836076%7Ctwgr%5E1116824cb32c80ef4777006c7dffa62d5b21774f%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fwww.chaicode.com%2F",
   },
   {
     id: 4,
