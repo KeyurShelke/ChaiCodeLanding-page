@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { Twitter } from "lucide-react";
+import Link from "next/link";
 
 const tweets = [
   {
@@ -75,9 +76,15 @@ export default function TweetCarousel() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="button-glow inline-block px-4 py-1 mb-4">
-            Community Love
-          </span>
+          <Link
+            href="https://x.com/ChaiCodeHQ"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="button-glow inline-block px-4 py-1 mb-4 cursor-pointer hover:bg-primary/20 transition-colors">
+              Community Love
+            </span>
+          </Link>
           <h2 className="heading-large mb-4">Tweet Love</h2>
           <p className="heading-subtitle">
             See what our community is saying about their learning experience
