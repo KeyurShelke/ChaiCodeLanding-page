@@ -103,7 +103,7 @@ export default function KeyBenefitsSection() {
               <div className="bg-primary/10 p-3 rounded-lg inline-block mb-4">
                 {benefit.icon}
               </div>
-              <h3 className="text-xl font-bold mb-2 text-primary">
+              <h3 className="text-xl font-bold mb-2 text-red-50">
                 {benefit.title}
               </h3>
               <p className="text-gray-400">{benefit.description}</p>
@@ -119,7 +119,7 @@ export default function KeyBenefitsSection() {
         >
           <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6">
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-primary">
+              <h3 className="text-2xl font-bold mb-4 text-red-50">
                 Alumni Network and job listings
               </h3>
               <p className="text-gray-400">
