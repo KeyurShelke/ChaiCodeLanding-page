@@ -111,16 +111,16 @@ const topics: Topic[] = [
     url: "https://youtu.be/VJVfWWdtJ4c?si=hRXE3K700Ris6EzP",
   },
   {
-    id: 14,
-    name: "JWT",
+    id: 17,
+    name: "Streamlit",
     size: "medium",
-    url: "https://www.youtube.com/watch?v=xrj3zzaqODw",
+    url: "https://youtu.be/yKTEC1Y5bEQ?si=opBVj1SB3Hp2C1-j",
   },
   {
-    id: 14,
-    name: "JWT",
+    id: 18,
+    name: "SAAS",
     size: "medium",
-    url: "https://www.youtube.com/watch?v=xrj3zzaqODw",
+    url: "https://youtu.be/1i8R-iJiEi8?si=y2MUDGI5RgokrAeH",
   },
   {
     id: 14,
