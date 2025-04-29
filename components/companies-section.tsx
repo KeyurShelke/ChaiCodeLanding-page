@@ -69,8 +69,10 @@ export default function CompaniesSection() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Thousands of students achieved their{" "}
-            <span className="text-blue-500">dream job at</span>
+            Our students are not only working in big tech companies but are now{" "}
+            <span className="text-amber-600">founders </span>
+            of funded startups and{" "}
+            <span className="text-amber-600">product creators</span>
           </h2>
         </motion.div>
 
