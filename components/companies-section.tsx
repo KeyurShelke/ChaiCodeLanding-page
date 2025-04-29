@@ -28,8 +28,8 @@ const companies = [
   },
   {
     id: 5,
-    name: "PayPal",
-    logo: "/placeholder.svg?height=60&width=120",
+    name: "Intel",
+    logo: "/int.png?height=60&width=120",
   },
   {
     id: 6,
