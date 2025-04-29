@@ -141,10 +141,10 @@ const topics: Topic[] = [
     url: "https://youtu.be/7G4IkcCqNlc?si=6FEzUgQpEzT1s1pY",
   },
   {
-    id: 14,
-    name: "JWT",
+    id: 22,
+    name: "Langchain",
     size: "medium",
-    url: "https://www.youtube.com/watch?v=xrj3zzaqODw",
+    url: "https://youtu.be/DcNxg61kSFc?si=Ln4EGDtQd-z5Bbzr",
   },
 ];
 
