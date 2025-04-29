@@ -35,13 +35,12 @@ export default function Navbar() {
             <Link href="/" className="flex items-center">
               {/* Replace this with your logo image */}
               <Image
-                src="/placeholder.svg?height=40&width=40"
+                src="/cclogo.png?height=40&width=40"
                 alt="Logo"
-                width={40}
-                height={40}
+                width={120}
+                height={120}
                 className="mr-2"
               />
-              <span className="text-xl font-bold">ChaiCode</span>
             </Link>
           </div>
 
