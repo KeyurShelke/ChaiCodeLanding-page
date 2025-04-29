@@ -66,13 +66,11 @@ export default function Hero() {
       {/* Main content */}
       <div className="container max-w-6xl mx-auto px-4 z-10 flex flex-col items-center">
         {/* Trusted by badge */}
-        <div className="inline-block px-4 py-2 mb-12 bg-black/80 border border-gray-800 rounded-full backdrop-blur-sm">
-          <div className="flex items-center">
-            <span className="text-white text-sm sm:text-base">
-              Trusted by 1.5M Code Learners
-            </span>
-            <span className="ml-2 h-2 w-2 rounded-full bg-orange-500"></span>
-          </div>
+
+        <div className="button-glow inline-block px-6 py-3 mb-16 z-10">
+          <span className="text-white text-sm font-medium">
+            Trusted by 1.5M Code Learners
+          </span>
         </div>
 
         {/* Main heading */}
