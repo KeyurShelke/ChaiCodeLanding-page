@@ -91,8 +91,13 @@ export default function Navbar() {
 
           {/* Login Button - Right */}
           <div className="hidden md:block">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-md flex items-center transition-colors shadow-glow-orange">
-              <span>Login</span>
+            <button>
+              <a
+                href="https://courses.chaicode.com/learn/account/signin"
+                className="button-glow"
+              >
+                Login
+              </a>
             </button>
           </div>
         </div>
