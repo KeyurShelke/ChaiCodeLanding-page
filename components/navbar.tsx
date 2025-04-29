@@ -73,7 +73,7 @@ export default function Navbar() {
               <span>Udemy</span>
             </Link>
             <Link
-              href="#"
+              href="https://docs.chaicode.com/"
               className="flex items-center text-white hover:text-orange-300 transition-colors"
             >
               <FileText className="h-5 w-5 mr-1.5" />
