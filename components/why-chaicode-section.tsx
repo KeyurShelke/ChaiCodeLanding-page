@@ -206,11 +206,6 @@ export default function WhyChaiCodeSection() {
                   Project based courses with peer reviews and live sessions that
                   make learning fun
                 </p>
-                <div className="flex justify-center space-x-2">
-                  <div className="w-8 h-8 rounded bg-gray-800"></div>
-                  <div className="w-8 h-8 rounded bg-gray-800"></div>
-                  <div className="w-8 h-8 rounded bg-gray-800"></div>
-                </div>
               </div>
             </motion.div>
             <motion.div
