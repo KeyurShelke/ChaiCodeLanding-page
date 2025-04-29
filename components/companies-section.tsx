@@ -8,8 +8,8 @@ import Image from "next/image";
 const companies = [
   {
     id: 1,
-    name: "Amazon",
-    logo: "/placeholder.svg?height=60&width=120",
+    name: "Visa",
+    logo: "/visa.png?height=60&width=120",
   },
   {
     id: 2,
