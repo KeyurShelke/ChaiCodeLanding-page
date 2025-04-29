@@ -65,7 +65,7 @@ export default function EnhancedDiscordSection() {
             </div>
             <div className="p-4 bg-black text-white flex items-center justify-center border-t border-gray-800">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/discord-HwoDnkHs9kMl9IKVrCHXDiJLcVrWop.png"
+                src="dis.png"
                 alt="Discord Logo"
                 width={200}
                 height={60}
