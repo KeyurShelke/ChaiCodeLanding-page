@@ -14,7 +14,7 @@ const companies = [
   {
     id: 2,
     name: "Google",
-    logo: "/placeholder.svg?height=60&width=120",
+    logo: "/google.png",
   },
   {
     id: 3,
