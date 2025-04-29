@@ -129,10 +129,10 @@ const topics: Topic[] = [
     url: "https://youtu.be/x7ULDYs4X84?si=01EJA939PdjDssp4",
   },
   {
-    id: 14,
-    name: "JWT",
+    id: 20,
+    name: "Frontend",
     size: "medium",
-    url: "https://www.youtube.com/watch?v=xrj3zzaqODw",
+    url: "https://youtu.be/3DvxjJPKdzI?si=_61dzhomCT9oSgvg",
   },
   {
     id: 14,
