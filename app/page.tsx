@@ -2,7 +2,7 @@ import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
 import VideoEmbed from "@/components/video-embed";
 import TweetCarousel from "@/components/tweet-carousel";
-import LogoCarousel from "@/components/logo-carousel";
+import CompaniesSection from "@/components/companies-section";
 import CohortsSection from "@/components/cohorts-section";
 import TestimonialsSection from "@/components/testimonials-section";
 import UdemySection from "@/components/udemy-section";
@@ -22,7 +22,7 @@ export default function Home() {
       <Hero />
       <VideoEmbed />
       <TweetCarousel />
-      <LogoCarousel />
+      <CompaniesSection />
       <CohortsSection />
       <TestimonialsSection />
       <UdemySection />
