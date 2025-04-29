@@ -23,8 +23,8 @@ const companies = [
   },
   {
     id: 4,
-    name: "Goldman Sachs",
-    logo: "/placeholder.svg?height=60&width=120",
+    name: "IBM",
+    logo: "/ibm.png?height=60&width=120",
   },
   {
     id: 5,
