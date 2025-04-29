@@ -42,9 +42,9 @@ const companies = [
     logo: "/tesla.png?height=60&width=120",
   },
   {
-    id: 6,
-    name: "Samsung",
-    logo: "/placeholder.svg?height=60&width=120",
+    id: 8,
+    name: "Walmart",
+    logo: "/walm.png?height=60&width=120",
   },
   {
     id: 6,
