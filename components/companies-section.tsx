@@ -47,9 +47,9 @@ const companies = [
     logo: "/walm.png?height=60&width=120",
   },
   {
-    id: 6,
-    name: "Samsung",
-    logo: "/placeholder.svg?height=60&width=120",
+    id: 9,
+    name: "Oracle",
+    logo: "/oracle.png?height=60&width=120",
   },
 ];
 
