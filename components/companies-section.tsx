@@ -34,7 +34,7 @@ const companies = [
   {
     id: 6,
     name: "Samsung",
-    logo: "/placeholder.svg?height=60&width=120",
+    logo: "/sam.png?height=60&width=120",
   },
   {
     id: 7,
