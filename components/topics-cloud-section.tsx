@@ -104,6 +104,48 @@ const topics: Topic[] = [
     size: "medium",
     url: "https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige",
   },
+  {
+    id: 16,
+    name: "System Design",
+    size: "medium",
+    url: "https://youtu.be/VJVfWWdtJ4c?si=hRXE3K700Ris6EzP",
+  },
+  {
+    id: 14,
+    name: "JWT",
+    size: "medium",
+    url: "https://www.youtube.com/watch?v=xrj3zzaqODw",
+  },
+  {
+    id: 14,
+    name: "JWT",
+    size: "medium",
+    url: "https://www.youtube.com/watch?v=xrj3zzaqODw",
+  },
+  {
+    id: 14,
+    name: "JWT",
+    size: "medium",
+    url: "https://www.youtube.com/watch?v=xrj3zzaqODw",
+  },
+  {
+    id: 14,
+    name: "JWT",
+    size: "medium",
+    url: "https://www.youtube.com/watch?v=xrj3zzaqODw",
+  },
+  {
+    id: 14,
+    name: "JWT",
+    size: "medium",
+    url: "https://www.youtube.com/watch?v=xrj3zzaqODw",
+  },
+  {
+    id: 14,
+    name: "JWT",
+    size: "medium",
+    url: "https://www.youtube.com/watch?v=xrj3zzaqODw",
+  },
 ];
 
 export default function TopicsCloudSection() {
