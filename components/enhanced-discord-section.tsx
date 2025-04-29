@@ -60,8 +60,15 @@ export default function EnhancedDiscordSection() {
             transition={{ duration: 0.6 }}
             className="bg-black rounded-xl overflow-hidden border border-gray-800"
           >
-            <div className="aspect-video relative bg-black rounded-t-xl p-4 flex items-center justify-center">
-              <div className="text-6xl text-white/80">Image</div>
+            <div className="aspect-video relative bg-black rounded-t-xl overflow-hidden">
+              <Image
+                src="hidiscord.jpeg?height=400&width=600"
+                alt="Discord Community"
+                width={600}
+                height={400}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30"></div>
             </div>
             <div className="p-4 bg-black text-white flex items-center justify-center border-t border-gray-800">
               <Image
