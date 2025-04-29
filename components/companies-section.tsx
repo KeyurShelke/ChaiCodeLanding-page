@@ -51,6 +51,11 @@ const companies = [
     name: "Oracle",
     logo: "/oracle.png?height=60&width=120",
   },
+  {
+    id: 10,
+    name: "Cisco",
+    logo: "/cisco.png?height=60&width=120",
+  },
 ];
 
 export default function CompaniesSection() {
