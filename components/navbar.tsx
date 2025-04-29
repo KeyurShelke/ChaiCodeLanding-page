@@ -2,13 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import { Code, FileText, Star, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,115 +24,124 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0.4 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-black/80 backdrop-blur-md py-2" : "bg-transparent py-4"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "bg-black/80 backdrop-blur-md" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex justify-center items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+        <div className="flex items-center justify-between">
           {/* Logo - Left */}
-          <div className="absolute left-4">
-            <Image
-              src="/cclogo.png"
-              alt="Your Logo"
-              width={120}
-              height={40}
-              className="h-10 w-auto"
-            />
+          <div>
+            <Link href="/" className="flex items-center">
+              {/* Replace this with your logo image */}
+              <Image
+                src="/placeholder.svg?height=40&width=40"
+                alt="Logo"
+                width={40}
+                height={40}
+                className="mr-2"
+              />
+              <span className="text-xl font-bold">ChaiCode</span>
+            </Link>
           </div>
 
-          {/* Desktop Navigation - Center */}
+          {/* Mobile menu button */}
+          <button
+            className="md:hidden text-white focus:outline-none"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
 
+          {/* Desktop Navigation - Center */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link
-              href="https://www.udemy.com/course/web-dev-master/?couponCode=NVDIN35"
-              className="text-white hover:text-primary transition-colors"
-            >
-              Udemy
-            </Link>
-
-            <Link
-              href="https://docs.chaicode.com/"
-              className="text-white hover:text-primary transition-colors"
-            >
-              Docs
-            </Link>
-
-            <Link
               href="#cohorts"
-              className="relative text-white hover:text-primary transition-colors group"
+              className="flex items-center text-white hover:text-orange-300 transition-colors"
             >
-              Cohorts
-              <span className="absolute -right-3 top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
+              <Code className="h-5 w-5 mr-1.5" />
+              <span>Cohorts</span>
             </Link>
-
+            <Link
+              href="#"
+              className="flex items-center text-white hover:text-orange-300 transition-colors"
+            >
+              <FileText className="h-5 w-5 mr-1.5" />
+              <span>Udemy</span>
+            </Link>
+            <Link
+              href="#"
+              className="flex items-center text-white hover:text-orange-300 transition-colors"
+            >
+              <FileText className="h-5 w-5 mr-1.5" />
+              <span>Docs</span>
+            </Link>
             <Link
               href="#testimonials"
-              className="text-white hover:text-primary transition-colors"
+              className="flex items-center text-white hover:text-orange-300 transition-colors"
             >
-              Reviews
+              <Star className="h-5 w-5 mr-1.5" />
+              <span>Reviews</span>
             </Link>
           </nav>
 
           {/* Login Button - Right */}
-          <div className="absolute right-4">
-            <a
-              href="https://courses.chaicode.com/learn/account/signin"
-              className="button-glow"
-            >
-              Login
-            </a>
+          <div className="hidden md:block">
+            <button className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-md flex items-center transition-colors shadow-glow-orange">
+              <span>Login</span>
+            </button>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden absolute right-4 text-white"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
+      {/* Mobile menu */}
+      {isMobileMenuOpen && (
         <div className="md:hidden bg-black/95 backdrop-blur-md">
-          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+          <nav className="flex flex-col space-y-4 px-4 py-6">
             <Link
               href="#cohorts"
-              className="relative text-white hover:text-primary transition-colors py-2"
-              onClick={() => setIsMenuOpen(false)}
+              className="flex items-center text-white hover:text-orange-300 transition-colors py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
-              Cohorts
-              <span className="absolute right-0 top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
+              <Code className="h-5 w-5 mr-1.5" />
+              <span>Cohorts</span>
             </Link>
             <Link
               href="#"
-              className="text-white hover:text-primary transition-colors py-2"
-              onClick={() => setIsMenuOpen(false)}
+              className="flex items-center text-white hover:text-orange-300 transition-colors py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
-              Udemy
+              <FileText className="h-5 w-5 mr-1.5" />
+              <span>Udemy</span>
             </Link>
             <Link
               href="#"
-              className="text-white hover:text-primary transition-colors py-2"
-              onClick={() => setIsMenuOpen(false)}
+              className="flex items-center text-white hover:text-orange-300 transition-colors py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
-              Docs
+              <FileText className="h-5 w-5 mr-1.5" />
+              <span>Docs</span>
             </Link>
             <Link
               href="#testimonials"
-              className="text-white hover:text-primary transition-colors py-2"
-              onClick={() => setIsMenuOpen(false)}
+              className="flex items-center text-white hover:text-orange-300 transition-colors py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
-              Reviews
+              <Star className="h-5 w-5 mr-1.5" />
+              <span>Reviews</span>
             </Link>
-            <Button variant="outline" className="button-glow w-full">
-              Login
-            </Button>
-          </div>
+            <button className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-md flex items-center justify-center transition-colors shadow-glow-orange mt-2">
+              <span>Login</span>
+            </button>
+          </nav>
         </div>
       )}
+
+      <div className="border-t border-gray-700/50 mt-1"></div>
     </header>
   );
 }
