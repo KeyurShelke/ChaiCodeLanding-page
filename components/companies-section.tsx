@@ -36,6 +36,21 @@ const companies = [
     name: "Samsung",
     logo: "/placeholder.svg?height=60&width=120",
   },
+  {
+    id: 7,
+    name: "Tesla",
+    logo: "/tesla.png?height=60&width=120",
+  },
+  {
+    id: 6,
+    name: "Samsung",
+    logo: "/placeholder.svg?height=60&width=120",
+  },
+  {
+    id: 6,
+    name: "Samsung",
+    logo: "/placeholder.svg?height=60&width=120",
+  },
 ];
 
 export default function CompaniesSection() {
