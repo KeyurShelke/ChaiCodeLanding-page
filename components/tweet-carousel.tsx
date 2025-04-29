@@ -175,13 +175,6 @@ export default function TweetCarousel() {
             </Link>
           </motion.div>
         </div>
-
-        <div className="text-center mt-8 text-gray-400 max-w-3xl mx-auto">
-          <p>
-            Our students are not only working in big tech companies but are now
-            founders of funded startups and product creators
-          </p>
-        </div>
       </div>
     </section>
   );
