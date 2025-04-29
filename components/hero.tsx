@@ -23,31 +23,31 @@ export default function Hero() {
       id: 1,
       name: "Peer learning",
       icon: <Code className="h-4 w-4 text-orange-500 mr-2" />,
-      link: "/peer-learning",
+      link: "",
     },
     {
       id: 2,
       name: "Code reviews",
       icon: <FileCode className="h-4 w-4 text-orange-500 mr-2" />,
-      link: "/code-reviews",
+      link: "",
     },
     {
       id: 3,
       name: "Virtual hostel",
       icon: <Monitor className="h-4 w-4 text-orange-500 mr-2" />,
-      link: "/virtual-hostel",
+      link: "",
     },
     {
       id: 4,
       name: "Doubt sessions",
       icon: <MessageSquare className="h-4 w-4 text-orange-500 mr-2" />,
-      link: "/doubt-sessions",
+      link: "",
     },
     {
       id: 5,
       name: "Bounties",
       icon: <Zap className="h-4 w-4 text-orange-500 mr-2" />,
-      link: "/bounties",
+      link: "",
     },
   ];
 
