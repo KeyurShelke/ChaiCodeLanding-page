@@ -18,8 +18,8 @@ const companies = [
   },
   {
     id: 3,
-    name: "Microsoft",
-    logo: "/placeholder.svg?height=60&width=120",
+    name: "Apple",
+    logo: "/apple.png?height=60&width=120",
   },
   {
     id: 4,
