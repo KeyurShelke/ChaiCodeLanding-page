@@ -37,7 +37,7 @@ export default function YoutubeChannelsSection() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Explore Our Engaging YouTube Channels
+            Explore Our Engaging Apps & YouTube Channels
           </h2>
         </motion.div>
 
