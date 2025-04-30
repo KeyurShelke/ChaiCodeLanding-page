@@ -91,27 +91,12 @@ export default function YoutubeChannelsSection() {
                   {/* Download buttons in the middle of the phone */}
                   <div className="flex flex-col space-y-4 w-full px-4">
                     <motion.a
-                      href="#"
+                      href="https://play.google.com/store/apps/details?id=com.chaicode.courses&pcampaignid=web_share"
                       className="flex items-center justify-center bg-black text-white px-4 py-3 rounded-lg border border-gray-700 transition-all duration-300 hover:bg-gray-900 hover:border-primary hover:shadow-[0_0_10px_rgba(249,115,22,0.4)]"
                       whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.97 }}
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="h-5 w-5 mr-2"
-                      >
-                        <path d="m12 17-9-7 9-7 9 7-9 7z"></path>
-                        <path d="M12 17v4"></path>
-                        <path d="m3 10 9 7 9-7"></path>
-                      </svg>
+                      <Download className="h-5 w-5 mr-2" />
                       <div className="flex flex-col items-start">
                         <span className="text-xs text-gray-400">GET IT ON</span>
                         <span className="font-bold text-base">Google Play</span>
