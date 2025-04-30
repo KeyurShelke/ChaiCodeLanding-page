@@ -11,8 +11,8 @@ import WhyChaiCodeSection from "@/components/why-chaicode-section";
 import TopicsCloudSection from "@/components/topics-cloud-section";
 
 import EnhancedDiscordSection from "@/components/enhanced-discord-section";
-import CommunityUISection from "@/components/community-ui-section";
 import FreeApiSection from "@/components/free-api-section";
+import YoutubeChannelsSection from "@/components/youtube-channels-section";
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -31,7 +31,7 @@ export default function Home() {
       <TopicsCloudSection />
       <EnhancedDiscordSection />
       <FreeApiSection />
-      <CommunityUISection />
+      <YoutubeChannelsSection />
       <Footer />
     </main>
   );
