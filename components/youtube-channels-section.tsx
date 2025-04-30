@@ -1,6 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
+import { Download } from "lucide-react";
 import {
   Bell,
   Code,
@@ -117,26 +119,12 @@ export default function YoutubeChannelsSection() {
                     </motion.a>
 
                     <motion.a
-                      href="#"
+                      href="https://apps.apple.com/in/app/chaicode/id6504993143"
                       className="flex items-center justify-center bg-black text-white px-4 py-3 rounded-lg border border-gray-700 transition-all duration-300 hover:bg-gray-900 hover:border-primary hover:shadow-[0_0_10px_rgba(249,115,22,0.4)]"
                       whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.97 }}
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="h-5 w-5 mr-2"
-                      >
-                        <path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 4-2.5 4-2.5-1 0-1.5-.5-2.5-.5s-2 .5-3.5.5-2-.5-3-.5-2 .5-2.5.5c0 0 1 2.5 3.5 2.5z"></path>
-                        <path d="M9 12.5v-9s2 .5 4 .5 3.5-.5 3.5-.5.5 3.5.5 5-.5 4-.5 4-2-.5-3.5-.5-4 .5-4 .5"></path>
-                      </svg>
+                      <Download className="h-5 w-5 mr-2" />
                       <div className="flex flex-col items-start">
                         <span className="text-xs text-gray-400">
                           DOWNLOAD ON THE
@@ -201,17 +189,23 @@ export default function YoutubeChannelsSection() {
                     <p className="text-gray-400">@chaiaurcode</p>
                   </div>
                 </div>
-                <motion.a
-                  href="https://youtube.com/@chaiaurcode"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-primary text-white px-4 py-2 rounded-lg flex items-center"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  className="flex justify-center"
                 >
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  Visit Channel
-                </motion.a>
+                  <Link
+                    href="https://www.youtube.com/@chaiaurcode"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="button-glow">
+                      Visit Channel
+                      <span className="ml-2 h-3 w-3 rounded-full bg-red-500 animate-pulse"></span>
+                    </button>
+                  </Link>
+                </motion.div>
               </div>
 
               <div className="mt-6 flex items-center space-x-4">
@@ -257,17 +251,23 @@ export default function YoutubeChannelsSection() {
                     <p className="text-gray-400">@HiteshCodeLab</p>
                   </div>
                 </div>
-                <motion.a
-                  href="https://youtube.com/@HiteshChoudharydotcom"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-primary text-white px-4 py-2 rounded-lg flex items-center"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  className="flex justify-center"
                 >
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  Visit Channel
-                </motion.a>
+                  <Link
+                    href="https://www.youtube.com/@HiteshCodeLab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="button-glow">
+                      Visit Channel
+                      <span className="ml-2 h-3 w-3 rounded-full bg-red-500 animate-pulse"></span>
+                    </button>
+                  </Link>
+                </motion.div>
               </div>
 
               <div className="mt-6 flex items-center space-x-4">
