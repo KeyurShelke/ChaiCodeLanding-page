@@ -15,7 +15,7 @@ const courses = [
     price: "₹399",
     originalPrice: "₹3,099",
     discount: "87% off",
-    thumbnail: "/placeholder.svg?height=200&width=350",
+    thumbnail: "/udemy2.jpeg?height=200&width=350",
   },
   {
     id: 2,
@@ -160,21 +160,26 @@ export default function UdemySection() {
             className="overflow-x-auto hide-scrollbar flex gap-6 pb-4"
             onScroll={checkScrollability}
           >
-            {/* Original set of course cards */}
             {courses.map((course, index) => (
               <CourseCard
                 key={course.id}
-                course={course}
+                course={{
+                  ...course,
+                  thumbnail: course.thumbnail || "/placeholder.svg",
+                }} // Ensure thumbnail is always a string
                 index={index}
                 inView={inView}
               />
             ))}
 
-            {/* Duplicate set of course cards */}
             {courses.map((course, index) => (
               <CourseCard
                 key={`duplicate-${course.id}`}
-                course={{ ...course, id: course.id + 100 }}
+                course={{
+                  ...course,
+                  id: course.id + 100,
+                  thumbnail: course.thumbnail || "/placeholder.svg",
+                }} // Ensure thumbnail is always a string
                 index={index + courses.length}
                 inView={inView}
               />
