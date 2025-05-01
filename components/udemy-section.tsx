@@ -1,14 +1,100 @@
 "use client";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Star } from "lucide-react";
-import Link from "next/link";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+
+// Course data
+const courses = [
+  {
+    id: 1,
+    title: "Complete web development course",
+    description:
+      "Only web development course that you will need. Covers HTML, CSS, Tailwind, Node, React, MongoDB, Prisma, Deployment etc",
+    rating: 4.7,
+    price: "₹399",
+    originalPrice: "₹3,099",
+    discount: "87% off",
+    thumbnail: "/placeholder.svg?height=200&width=350",
+  },
+  {
+    id: 2,
+    title: "JavaScript Mastery",
+    description:
+      "Master JavaScript from basics to advanced concepts. Includes ES6+, async programming, and modern frameworks.",
+    rating: 4.8,
+    price: "₹499",
+    originalPrice: "₹2,999",
+    discount: "83% off",
+    thumbnail: "/placeholder.svg?height=200&width=350",
+  },
+  {
+    id: 3,
+    title: "React Native for Beginners",
+    description:
+      "Learn to build cross-platform mobile apps with React Native. From setup to deployment on app stores.",
+    rating: 4.9,
+    price: "₹599",
+    originalPrice: "₹3,599",
+    discount: "85% off",
+    thumbnail: "/placeholder.svg?height=200&width=350",
+  },
+  {
+    id: 4,
+    title: "Advanced Node.js",
+    description:
+      "Take your Node.js skills to the next level with advanced concepts, performance optimization, and real-world projects.",
+    rating: 4.6,
+    price: "₹699",
+    originalPrice: "₹4,099",
+    discount: "82% off",
+    thumbnail: "/placeholder.svg?height=200&width=350",
+  },
+];
 
 export default function UdemySection() {
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
   });
+
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  // Check if we can scroll left or right
+  const checkScrollability = () => {
+    if (!sliderRef.current) return;
+
+    const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
+    setCanScrollLeft(scrollLeft > 0);
+    setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10); // Small buffer for rounding errors
+  };
+
+  useEffect(() => {
+    checkScrollability();
+    window.addEventListener("resize", checkScrollability);
+    return () => window.removeEventListener("resize", checkScrollability);
+  }, []);
+
+  // Scroll the slider left or right
+  const scroll = (direction: "left" | "right") => {
+    if (!sliderRef.current) return;
+
+    const scrollAmount = sliderRef.current.clientWidth * 0.6;
+    const newScrollLeft =
+      direction === "left"
+        ? sliderRef.current.scrollLeft - scrollAmount
+        : sliderRef.current.scrollLeft + scrollAmount;
+
+    sliderRef.current.scrollTo({
+      left: newScrollLeft,
+      behavior: "smooth",
+    });
+
+    // Update scroll buttons after animation
+    setTimeout(checkScrollability, 500);
+  };
 
   return (
     <section className="py-20 bg-black relative overflow-hidden" ref={ref}>
@@ -31,76 +117,153 @@ export default function UdemySection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          {/* Left column - Course details */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -20 }}
-            transition={{ duration: 0.6 }}
-            whileHover={{
-              y: -10,
-              boxShadow:
-                "0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04)",
-              borderColor: "rgba(249, 115, 22, 0.3)",
-            }}
-            className="bg-gradient-to-b from-gray-900 to-black rounded-xl p-8 border border-gray-800 transition-all duration-300"
+        <div className="relative">
+          {/* Left arrow button */}
+          <motion.button
+            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/70 hover:bg-black/90 p-3 rounded-full border border-gray-700 ${
+              !canScrollLeft
+                ? "opacity-30 cursor-not-allowed"
+                : "opacity-100 cursor-pointer"
+            }`}
+            onClick={() => scroll("left")}
+            disabled={!canScrollLeft}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: inView ? (canScrollLeft ? 1 : 0.3) : 0 }}
+            transition={{ duration: 0.3, delay: 0.6 }}
+            whileHover={canScrollLeft ? { scale: 1.1 } : {}}
+            style={{ left: "-10px" }}
           >
-            <h3 className="text-2xl font-bold mb-4">
-              Complete web development course
-            </h3>
-            <p className="text-gray-400 mb-6">
-              Only web development course that you will need. Covers HTML, CSS,
-              Tailwind, Node, React, MongoDB, Prisma, Deployment etc
-            </p>
+            <ChevronLeft className="h-6 w-6 text-white" />
+          </motion.button>
 
-            <div className="flex items-center mb-4">
-              <div className="text-4xl font-bold mr-3">4.7</div>
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                ))}
-              </div>
-              <div className="ml-2 text-sm text-gray-400">Top Rated</div>
-            </div>
-
-            <div className="flex items-center mb-6">
-              <span className="text-primary text-3xl font-bold">₹499</span>
-              <span className="text-gray-400 line-through ml-3">₹3,099</span>
-              <span className="ml-3 bg-primary/20 text-primary px-2 py-1 rounded text-sm">
-                87% off
-              </span>
-            </div>
-
-            <Link
-              href="https://www.udemy.com/course/web-dev-master/?couponCode=NVDIN35"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button className="button-glow">
-                Check Udemy Courses
-                <span className="ml-2 h-3 w-3 rounded-full bg-red-500 animate-pulse"></span>
-              </button>
-            </Link>
-          </motion.div>
-
-          {/* Right column - Video embed */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : 20 }}
-            transition={{ duration: 0.6 }}
-            className="aspect-video rounded-xl overflow-hidden"
+          {/* Right arrow button */}
+          <motion.button
+            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/70 hover:bg-black/90 p-3 rounded-full border border-gray-700 ${
+              !canScrollRight
+                ? "opacity-30 cursor-not-allowed"
+                : "opacity-100 cursor-pointer"
+            }`}
+            onClick={() => scroll("right")}
+            disabled={!canScrollRight}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: inView ? (canScrollRight ? 1 : 0.3) : 0 }}
+            transition={{ duration: 0.3, delay: 0.6 }}
+            whileHover={canScrollRight ? { scale: 1.1 } : {}}
+            style={{ right: "-10px" }}
           >
-            <iframe
-              className="w-full h-full"
-              src="https://www.youtube.com/embed/KZ31wDjYleI?si=XAmNcq3la9KCTJCcc"
-              title="Most affordable web dev course launch"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </motion.div>
+            <ChevronRight className="h-6 w-6 text-white" />
+          </motion.button>
+
+          {/* Slider container */}
+          <div
+            ref={sliderRef}
+            className="overflow-x-auto hide-scrollbar flex gap-6 pb-4"
+            onScroll={checkScrollability}
+          >
+            {/* Original set of course cards */}
+            {courses.map((course, index) => (
+              <CourseCard
+                key={course.id}
+                course={course}
+                index={index}
+                inView={inView}
+              />
+            ))}
+
+            {/* Duplicate set of course cards */}
+            {courses.map((course, index) => (
+              <CourseCard
+                key={`duplicate-${course.id}`}
+                course={{ ...course, id: course.id + 100 }}
+                index={index + courses.length}
+                inView={inView}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
+  );
+}
+
+interface CourseProps {
+  course: {
+    id: number;
+    title: string;
+    description: string;
+    rating: number;
+    price: string;
+    originalPrice: string;
+    discount: string;
+    thumbnail: string;
+  };
+  index: number;
+  inView: boolean;
+}
+
+function CourseCard({ course, index, inView }: CourseProps) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : 20 }}
+      transition={{ duration: 0.6, delay: 0.1 * Math.min(index, 5) }}
+      className="flex-shrink-0 w-[300px] md:w-[400px]"
+    >
+      <div className="bg-gradient-to-b from-gray-900 to-black rounded-xl overflow-hidden border border-gray-800 h-full">
+        {/* Course thumbnail */}
+        <div className="aspect-video relative">
+          <img
+            src={course.thumbnail || "/placeholder.svg"}
+            alt={course.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div className="absolute bottom-2 left-2 bg-primary text-black text-xs font-bold px-2 py-1 rounded">
+            BESTSELLER
+          </div>
+        </div>
+
+        {/* Course details */}
+        <div className="p-4">
+          <h3 className="text-lg font-bold mb-2 line-clamp-2">
+            {course.title}
+          </h3>
+          <p className="text-gray-400 text-sm mb-3 line-clamp-2">
+            {course.description}
+          </p>
+
+          <div className="flex items-center mb-2">
+            <div className="text-lg font-bold mr-2">{course.rating}</div>
+            <div className="flex">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="h-4 w-4 text-primary fill-primary" />
+              ))}
+            </div>
+            <div className="ml-2 text-xs text-gray-400">Top Rated</div>
+          </div>
+
+          <div className="flex items-center mb-4">
+            <span className="text-primary text-xl font-bold">
+              {course.price}
+            </span>
+            <span className="text-gray-400 line-through ml-3 text-sm">
+              {course.originalPrice}
+            </span>
+            <span className="ml-3 bg-primary/20 text-primary px-2 py-1 rounded text-xs">
+              {course.discount}
+            </span>
+          </div>
+
+          <motion.a
+            href="#"
+            className="inline-block w-full bg-primary text-black font-bold py-2 px-4 rounded-lg transition-all hover:bg-primary/90 text-center"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            Check Udemy Course
+          </motion.a>
+        </div>
+      </div>
+    </motion.div>
   );
 }
