@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 
 // Course data
 const courses = [
@@ -19,14 +20,14 @@ const courses = [
   },
   {
     id: 2,
-    title: "JavaScript Mastery",
+    title: "Frontend Mastery",
     description:
-      "Master JavaScript from basics to advanced concepts. Includes ES6+, async programming, and modern frameworks.",
+      "Master Frontend from basics to advanced concepts. Includes modern frameworks.",
     rating: 4.8,
-    price: "₹499",
+    price: "₹299",
     originalPrice: "₹2,999",
     discount: "83% off",
-    thumbnail: "/hidiscord.jpeg?height=200&width=350",
+    thumbnail: "/udemyf.png?height=200&width=350",
   },
   {
     id: 3,
@@ -34,10 +35,10 @@ const courses = [
     description:
       "Learn to build cross-platform mobile apps with React Native. From setup to deployment on app stores.",
     rating: 4.9,
-    price: "₹599",
-    originalPrice: "₹3,599",
+    price: "₹299",
+    originalPrice: "₹2,599",
     discount: "85% off",
-    thumbnail: "/placeholder.svg?height=200&width=350",
+    thumbnail: "/udemy4.png?height=200&width=350",
   },
   {
     id: 4,
@@ -45,10 +46,10 @@ const courses = [
     description:
       "Take your Node.js skills to the next level with advanced concepts, performance optimization, and real-world projects.",
     rating: 4.6,
-    price: "₹699",
-    originalPrice: "₹4,099",
+    price: "₹299",
+    originalPrice: "₹2,099",
     discount: "82% off",
-    thumbnail: "/placeholder.svg?height=200&width=350",
+    thumbnail: "/hidiscord.jpeg?height=200&width=350",
   },
 ];
 
@@ -258,15 +259,15 @@ function CourseCard({ course, index, inView }: CourseProps) {
               {course.discount}
             </span>
           </div>
-
-          <motion.a
-            href="#"
-            className="inline-block w-full bg-primary text-black font-bold py-2 px-4 rounded-lg transition-all hover:bg-primary/90 text-center"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            Check Udemy Course
-          </motion.a>
+          <Link href="https://www.udemy.com/course/web-dev-master/?couponCode=LEARNNOWPLANS">
+            <motion.button
+              className="w-full button-glow"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Check Udemy Now
+            </motion.button>
+          </Link>
         </div>
       </div>
     </motion.div>

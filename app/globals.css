@@ -53,6 +53,17 @@
   }
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 /* Background particles animation */
 .particles {
   position: absolute;
@@ -435,7 +446,64 @@
   );
 }
 
+/* Enhanced card hover effects */
+.card-hover-glow {
+  transition: all 0.3s ease;
+}
+
+.card-hover-glow:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 0 30px rgba(249, 115, 22, 0.4);
+  border-color: rgba(249, 115, 22, 0.5);
+}
+
+.card-hover-glow:hover::before {
+  opacity: 1;
+}
+
+.card-hover-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(249, 115, 22, 0.3),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* Radial gradient */
 .bg-gradient-radial {
   background-image: radial-gradient(var(--tw-gradient-stops));
+  background-position: center;
+  background-size: 200% 200%;
+}
+
+/* Line clamp utilities */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1; /* Standard property */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2; /* Standard property */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3; /* Standard property */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
