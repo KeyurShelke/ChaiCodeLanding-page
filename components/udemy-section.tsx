@@ -26,7 +26,7 @@ const courses = [
     price: "₹499",
     originalPrice: "₹2,999",
     discount: "83% off",
-    thumbnail: "/placeholder.svg?height=200&width=350",
+    thumbnail: "/hidiscord.jpeg?height=200&width=350",
   },
   {
     id: 3,
