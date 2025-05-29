@@ -93,7 +93,7 @@ export default function CohortsSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-gradient-to-b from-gray-900 to-black rounded-xl overflow-hidden border border-gray-800 group"
+              className="bg-gradient-to-b from-gray-900 to-black rounded-xl overflow-hidden border border-gray-800 group h-full flex flex-col"
               whileHover={{
                 y: -10,
                 boxShadow:
@@ -216,24 +216,28 @@ export default function CohortsSection() {
                 </div>
               </div>
 
-              <div className="p-6 relative z-10">
-                <h3 className="font-bold text-xl mb-2">{cohort.title}</h3>
-                <p className="text-gray-400 mb-4">{cohort.description}</p>
-                <div className="flex items-center mb-4">
-                  <span className="text-2xl font-bold">{cohort.price}</span>
-                  <span className="text-gray-400 line-through ml-2">
-                    {cohort.originalPrice}
-                  </span>
+              <div className="p-6 relative z-10 flex flex-col flex-grow">
+                <div className="flex-grow">
+                  <h3 className="font-bold text-xl mb-2">{cohort.title}</h3>
+                  <p className="text-gray-400 mb-4">{cohort.description}</p>
                 </div>
-                <Link href={cohort.link}>
-                  <motion.button
-                    className="w-full button-glow"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
-                  >
-                    Buy Now
-                  </motion.button>
-                </Link>
+                <div className="mt-auto">
+                  <div className="flex items-center mb-4">
+                    <span className="text-2xl font-bold">{cohort.price}</span>
+                    <span className="text-gray-400 line-through ml-2">
+                      {cohort.originalPrice}
+                    </span>
+                  </div>
+                  <Link href={cohort.link}>
+                    <motion.button
+                      className="w-full button-glow"
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.97 }}
+                    >
+                      Buy Now
+                    </motion.button>
+                  </Link>
+                </div>
               </div>
             </motion.div>
           ))}
