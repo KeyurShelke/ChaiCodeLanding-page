@@ -40,17 +40,6 @@ const courses = [
     discount: "85% off",
     thumbnail: "/udemy4.png?height=200&width=350",
   },
-  {
-    id: 4,
-    title: "Advanced Node.js",
-    description:
-      "Take your Node.js skills to the next level with advanced concepts, performance optimization, and real-world projects.",
-    rating: 4.6,
-    price: "₹299",
-    originalPrice: "₹2,099",
-    discount: "82% off",
-    thumbnail: "/hidiscord.jpeg?height=200&width=350",
-  },
 ];
 
 export default function UdemySection() {
@@ -213,9 +202,9 @@ function CourseCard({ course, index, inView }: CourseProps) {
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : 20 }}
       transition={{ duration: 0.6, delay: 0.1 * Math.min(index, 5) }}
-      className="flex-shrink-0 w-[300px] md:w-[400px]"
+      className="flex-shrink-0 w-[300px] md:w-[400px] h-[500px]"
     >
-      <div className="bg-gradient-to-b from-gray-900 to-black rounded-xl overflow-hidden border border-gray-800 h-full">
+      <div className="bg-gradient-to-b from-gray-900 to-black rounded-xl overflow-hidden border border-gray-800 h-full flex flex-col">
         {/* Course thumbnail */}
         <div className="aspect-video relative">
           <img
@@ -229,45 +218,51 @@ function CourseCard({ course, index, inView }: CourseProps) {
           </div>
         </div>
 
-        {/* Course details */}
-        <div className="p-4">
-          <h3 className="text-lg font-bold mb-2 line-clamp-2">
-            {course.title}
-          </h3>
-          <p className="text-gray-400 text-sm mb-3 line-clamp-2">
-            {course.description}
-          </p>
+        {/* Course details - flex-grow to take available space */}
+        <div className="p-4 flex-grow flex flex-col">
+          <div className="flex-grow">
+            <h3 className="text-lg font-bold mb-2 line-clamp-2">
+              {course.title}
+            </h3>
+            <p className="text-gray-400 text-sm mb-3 line-clamp-2">
+              {course.description}
+            </p>
 
-          <div className="flex items-center mb-2">
-            <div className="text-lg font-bold mr-2">{course.rating}</div>
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-4 w-4 text-primary fill-primary" />
-              ))}
+            <div className="flex items-center mb-2">
+              <div className="text-lg font-bold mr-2">{course.rating}</div>
+              <div className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 text-primary fill-primary" />
+                ))}
+              </div>
+              <div className="ml-2 text-xs text-gray-400">Top Rated</div>
             </div>
-            <div className="ml-2 text-xs text-gray-400">Top Rated</div>
+
+            <div className="flex items-center mb-4">
+              <span className="text-primary text-xl font-bold">
+                {course.price}
+              </span>
+              <span className="text-gray-400 line-through ml-3 text-sm">
+                {course.originalPrice}
+              </span>
+              <span className="ml-3 bg-primary/20 text-primary px-2 py-1 rounded text-xs">
+                {course.discount}
+              </span>
+            </div>
           </div>
 
-          <div className="flex items-center mb-4">
-            <span className="text-primary text-xl font-bold">
-              {course.price}
-            </span>
-            <span className="text-gray-400 line-through ml-3 text-sm">
-              {course.originalPrice}
-            </span>
-            <span className="ml-3 bg-primary/20 text-primary px-2 py-1 rounded text-xs">
-              {course.discount}
-            </span>
+          {/* Button fixed at bottom */}
+          <div className="mt-auto">
+            <Link href="https://www.udemy.com/course/web-dev-master/?couponCode=LEARNNOWPLANS">
+              <motion.button
+                className="w-full button-glow"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                Check Udemy Now
+              </motion.button>
+            </Link>
           </div>
-          <Link href="https://www.udemy.com/course/web-dev-master/?couponCode=LEARNNOWPLANS">
-            <motion.button
-              className="w-full button-glow"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              Check Udemy Now
-            </motion.button>
-          </Link>
         </div>
       </div>
     </motion.div>
